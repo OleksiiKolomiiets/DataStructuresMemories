@@ -27,18 +27,25 @@ class DataStructuresMemoriesTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DataStructId", for: indexPath) as! CustomTableViewCell
         
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DataStructId", for: indexPath) as CustomTableViewCell
+//        cell.labelOfCell.text = dataStructModel.getNameOfDataStructureMemorise(at: indexPath.row)
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DataStructId", for: indexPath) as? CustomTableViewCell else {
+            fatalError("Expected object: \(tableView.dequeueReusableCell(withIdentifier: "DataStructId", for: indexPath)) to be of type: CustomTableViewCell")
+        }
         cell.labelOfCell.text = dataStructModel.getNameOfDataStructureMemorise(at: indexPath.row)
-        
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        NSLog(<#T##format: String##String#>, <#T##args: CVarArg...##CVarArg#>)
+        print(indexPath.row)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+//        applyUI()
+    }
    
 
     /*
