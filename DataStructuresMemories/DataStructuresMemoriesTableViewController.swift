@@ -8,9 +8,11 @@
 
 import UIKit
 
-class DataStructuresMemoriesTableViewController: UITableViewController {
 
-    var dataStructuresMemories = [ "Stack", "Queue", "Set", "Dequeue", "PriorityQueue", "List(Array)", "MultiSet", "Dictionary"]
+
+class DataStructuresMemoriesTableViewController: UITableViewController {
+   
+    let dataStructModel = DataStructModel()
     
     // MARK: - UiTableViewController
 
@@ -20,17 +22,14 @@ class DataStructuresMemoriesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tableView.separatorColor = #colorLiteral(red: 0.1215686275, green: 0.1294117647, blue: 0.1411764706, alpha: 1)
-//        tableView.separatorInset =
-        return dataStructuresMemories.count
+        return dataStructModel.getAmountOfRows()
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DataStructId", for: indexPath)
-
-//         Configure the cell...
-        cell.textLabel?.text = dataStructuresMemories[indexPath.row]
-        cell.textLabel?.font = UIFont(name: "Helvetica Neue", size: 36.0)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DataStructId", for: indexPath) as! CustomTableViewCell
+        
+        cell.labelOfCell.text = dataStructModel.getNameOfDataStructureMemorise(at: indexPath.row)
         
         return cell
     }
