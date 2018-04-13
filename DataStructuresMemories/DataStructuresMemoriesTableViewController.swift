@@ -21,7 +21,6 @@ class DataStructuresMemoriesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tableView.separatorColor = #colorLiteral(red: 0.1215686275, green: 0.1294117647, blue: 0.1411764706, alpha: 1)
         return dataStructModel.getAmountOfRows()
     }
 
@@ -42,11 +41,14 @@ class DataStructuresMemoriesTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         print(indexPath.row)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-//        applyUI()
+      
+    override func viewDidLoad() {
+        applyUI(set: #colorLiteral(red: 0.1215686275, green: 0.1294117647, blue: 0.1411764706, alpha: 1), for: self.tableView)
     }
    
+    func applyUI(set color: UIColor, for tableView: UITableView) {
+        tableView.separatorColor = color
+    }
 
     /*
     // Override to support conditional editing of the table view.
