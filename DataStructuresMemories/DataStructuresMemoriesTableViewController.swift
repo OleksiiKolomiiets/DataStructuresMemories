@@ -33,6 +33,11 @@ class DataStructuresMemoriesTableViewController: UITableViewController {
         
         return cell
     }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        NSLog(<#T##format: String##String#>, <#T##args: CVarArg...##CVarArg#>)
+    }
     
    
 
