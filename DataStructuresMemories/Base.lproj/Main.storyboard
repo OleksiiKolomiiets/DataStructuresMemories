@@ -48,6 +48,7 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="labelOfCell" destination="4xc-Fp-qXR" id="YeV-EC-gkm"/>
+                                    <segue destination="e4p-tP-CEx" kind="show" identifier="Stack" id="R82-2n-zvm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -57,9 +58,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="uKv-y3-MbD"/>
-                    <connections>
-                        <segue destination="e4p-tP-CEx" kind="show" id="cFf-lL-lt3"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YyX-mK-YcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -72,9 +70,22 @@
                     <view key="view" contentMode="scaleToFill" id="hXs-Q6-at9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vC7-VU-ofM">
+                                <rect key="frame" x="127" y="269" width="121" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fqC-a8-b4X"/>
                     </view>
+                    <connections>
+                        <outlet property="view" destination="hXs-Q6-at9" id="seE-tO-LMG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ssb-XZ-znO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
