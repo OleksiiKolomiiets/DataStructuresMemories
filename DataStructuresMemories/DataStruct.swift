@@ -8,9 +8,7 @@
 
 import Foundation
 
-protocol DataStruct {
-    var sourceOfDataStructuresNames: [String] {get}
-    
+protocol DataStruct {    
     func getNameOfDataStructureMemorise(at index: Int) -> String
     func getAmountOfRows() -> Int
 }

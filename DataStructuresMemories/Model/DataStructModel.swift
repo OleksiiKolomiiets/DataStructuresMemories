@@ -9,9 +9,7 @@
 import Foundation
 
 class DataStructModel: DataStruct {
-    var sourceOfDataStructuresNames: [String] {
-        return ["Stack", "Queue", "Set", "Dequeue", "PriorityQueue", "List(Array)", "MultiSet", "Dictionary"]
-    }
+    private let sourceOfDataStructuresNames = ["Stack", "Queue", "Set", "Dequeue", "PriorityQueue", "List(Array)", "MultiSet", "Dictionary"]
     
     func getNameOfDataStructureMemorise(at index: Int) -> String {
         return sourceOfDataStructuresNames[index]
