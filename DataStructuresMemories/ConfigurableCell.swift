@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ConfigurableCell {
-    mutating func configure(_ model: CustomTableViewCell)
+    func configure(_ model: DataStructuresModel)
 }

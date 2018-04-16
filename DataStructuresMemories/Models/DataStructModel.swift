@@ -12,10 +12,14 @@ struct DataStructModel {
     var name: String
 }
 
-extension DataStructModel: ConfigurableCell {
-    mutating func configure(_ model: CustomTableViewCell) {
-        //        cell.labelOfCell.text = model.getNameOfDataStructureMemorise(at: model)
-    }
-    
-    
-}
+//extension DataStructModel: ConfigurableCell {
+//    mutating func configure(_ model: CustomTableViewCell) {
+//        
+//        model.labelOfCell.text = self.name
+//        
+////        getNameOfDataStructureMemorise(at: model)
+//    }
+//    
+//    
+//}
+

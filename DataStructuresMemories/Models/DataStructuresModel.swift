@@ -9,6 +9,13 @@
 import Foundation
 
 class DataStructuresModel: DataStruct {
+    init(_ indexOfName: Int) {
+        if let dataStruct = DataStructuresNames(rawValue: indexOfName) {
+            currentDataStruct = dataStruct
+        }
+    }
+    var currentDataStruct: DataStructuresNames?
+    
     enum DataStructuresNames: Int {
         case stack = 0, queue, set, dequeue, priorityQueue, listArray, multiSet, dictionary
         

@@ -12,7 +12,7 @@ import UIKit
 
 class DataStructuresTableViewController: UITableViewController {
    
-    let dataStructModel = DataStructuresModel()
+    let dataStructModel = DataStructuresModel(0)
     
     // MARK: - UiTableViewController
 
@@ -29,32 +29,18 @@ class DataStructuresTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DataStructId", for: indexPath) as? CustomTableViewCell else {
             fatalError("Expected object: \(tableView.dequeueReusableCell(withIdentifier: "DataStructId", for: indexPath)) to be of type: CustomTableViewCell")
         }
-        cell.labelOfCell.text = dataStructModel.getNameOfDataStructureMemorise(at: indexPath.row)
+        cell.configure(DataStructuresModel(indexPath.row))
+        print(cell)
+//        cell.labelOfCell.text = dataStructModel.getNameOfDataStructureMemorise(at: indexPath.row)
+        
         return cell
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        self.navigationController?.pushViewController(DataStructViewController(), animated: false)
-        if let identifire = segue.identifier {
-            switch identifire {
-            case "SegueId":
-                if let cell = sender as? CustomTableViewCell,
-                let indexPath = tableView.indexPath(for: cell),
-                let segueToStack = segue.destination as? DataStructViewController,
-                let content = cell.labelOfCell.text {
-                    segueToStack.titleText = content
-                    segueToStack.descriptionOfDataStructure = dataStructModel.getDescription(of: content)
-                    segueToStack.cellNumber = indexPath.row
-                }
-            default:
-                break
-            }
-        }
-    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        print(indexPath.row)
+//        self.navigationController?.pushViewController(DataStructViewController(), animated: false)
+//        print(indexPath.row)
     }
     
     override func viewDidLoad() {
