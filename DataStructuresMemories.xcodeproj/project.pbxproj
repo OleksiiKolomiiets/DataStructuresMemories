@@ -15,6 +15,7 @@
 		F2C6F144207F7AEF00581510 /* DataStructuresMemoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6F143207F7AEF00581510 /* DataStructuresMemoriesTableViewController.swift */; };
 		F2CA9E4D2080B1AC002E4654 /* DataStructModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CA9E4C2080B1AC002E4654 /* DataStructModel.swift */; };
 		F2CA9E4F2080B25B002E4654 /* DataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CA9E4E2080B25B002E4654 /* DataStruct.swift */; };
+		F2CA9E532080F19B002E4654 /* DataStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CA9E522080F19B002E4654 /* DataStructViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F2C6F143207F7AEF00581510 /* DataStructuresMemoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructuresMemoriesTableViewController.swift; sourceTree = "<group>"; };
 		F2CA9E4C2080B1AC002E4654 /* DataStructModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructModel.swift; sourceTree = "<group>"; };
 		F2CA9E4E2080B25B002E4654 /* DataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStruct.swift; sourceTree = "<group>"; };
+		F2CA9E522080F19B002E4654 /* DataStructViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				F29CD86420808FF60099DADB /* CustomTableViewCell.swift */,
 				F2C6F133207F704500581510 /* Main.storyboard */,
 				F2C6F143207F7AEF00581510 /* DataStructuresMemoriesTableViewController.swift */,
+				F2CA9E522080F19B002E4654 /* DataStructViewController.swift */,
 				F2C6F13B207F704500581510 /* Info.plist */,
 				F2C6F142207F732A00581510 /* SupportFiles */,
 			);
@@ -174,6 +177,7 @@
 				F2C6F144207F7AEF00581510 /* DataStructuresMemoriesTableViewController.swift in Sources */,
 				F29CD86520808FF60099DADB /* CustomTableViewCell.swift in Sources */,
 				F2C6F130207F704500581510 /* AppDelegate.swift in Sources */,
+				F2CA9E532080F19B002E4654 /* DataStructViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

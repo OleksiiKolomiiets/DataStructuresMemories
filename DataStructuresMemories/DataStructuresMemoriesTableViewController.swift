@@ -34,16 +34,29 @@ class DataStructuresMemoriesTableViewController: UITableViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(sender as Any)
+        if let identifire = segue.identifier {
+            switch identifire {
+            case "Stack":
+                if let cell = sender as? CustomTableViewCell,
+                let indexPath = tableView.indexPath(for: cell),
+                let segueToStack = segue.destination as? DataStructViewController,
+                let content = cell.labelOfCell.text {
+                    segueToStack.titleText = content
+                    segueToStack.descriptionOfDataStructure = dataStructModel.getDescription(of: content)
+                    segueToStack.cellNumber = indexPath.row
+                }
+            default:
+                break
+            }
+        }
     }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         print(indexPath.row)
     }
     
     override func viewDidLoad() {
-        applyUI(set: #colorLiteral(red: 0.1215686275, green: 0.1294117647, blue: 0.1411764706, alpha: 1), for: self.tableView)
+        applyUI(set: UIColor.black, for: self.tableView)
     }
    
     func applyUI(set color: UIColor, for tableView: UITableView) {
