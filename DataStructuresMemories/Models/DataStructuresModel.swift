@@ -1,6 +1,6 @@
 //
 //  DataStructModel.swift
-//  DataStructuresMemories
+//  DataStructures
 //
 //  Created by Oleksii Kolomiiets on 4/13/18.
 //  Copyright © 2018 Oleksii Kolomiiets. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DataStructModel: DataStruct {
+class DataStructuresModel: DataStruct {
     enum DataStructuresNames: Int {
         case stack = 0, queue, set, dequeue, priorityQueue, listArray, multiSet, dictionary
         

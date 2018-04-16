@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -16,16 +15,16 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Data Structures Memories Table View Controller-->
+        <!--Data Structures Table View Controller-->
         <scene sceneID="UCP-To-LF5">
             <objects>
-                <tableViewController id="s04-zu-BdT" customClass="DataStructuresMemoriesTableViewController" customModule="DataStructuresMemories" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="s04-zu-BdT" customClass="DataStructuresTableViewController" customModule="DataStructuresMemories" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="T4d-iO-sYY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DataStructId" editingAccessoryType="detailDisclosureButton" rowHeight="89" id="Ay5-7i-UOJ" customClass="CustomTableViewCell" customModule="DataStructuresMemories" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DataStructId" editingAccessoryType="detailDisclosureButton" rowHeight="89" id="Ay5-7i-UOJ" customClass="CustomTableViewCell" customModule="DataStructuresMemories">
                                 <rect key="frame" x="0.0" y="28" width="320" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ay5-7i-UOJ" id="xUn-x3-N39">
@@ -49,7 +48,7 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="labelOfCell" destination="4xc-Fp-qXR" id="YeV-EC-gkm"/>
-                                    <segue destination="e4p-tP-CEx" kind="show" identifier="Stack" id="R82-2n-zvm"/>
+                                    <segue destination="e4p-tP-CEx" kind="show" identifier="SegueId" id="R82-2n-zvm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -59,60 +58,70 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="uKv-y3-MbD"/>
+                    <connections>
+                        <outlet property="view" destination="T4d-iO-sYY" id="gVI-GW-5kK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YyX-mK-YcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="615" y="-665"/>
+            <point key="canvasLocation" x="609" y="-665"/>
         </scene>
         <!--Data Struct View Controller-->
         <scene sceneID="S5P-fo-A8i">
             <objects>
-                <viewController id="e4p-tP-CEx" customClass="DataStructViewController" customModule="DataStructuresMemories" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailId" id="e4p-tP-CEx" customClass="DataStructViewController" customModule="DataStructuresMemories" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hXs-Q6-at9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Nch-tp-lat">
-                                <rect key="frame" x="25" y="84" width="270" height="296"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="19W-aK-gim">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSD-t7-5Bh">
-                                        <rect key="frame" x="0.0" y="0.0" width="270" height="144"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wap-dQ-z9P">
-                                        <rect key="frame" x="0.0" y="152" width="270" height="144"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="LAble" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvv-u5-k6o">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="24"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="0.30961044520547948" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="jvv-u5-k6o" secondAttribute="bottom" id="UsO-BD-kgC"/>
+                                    <constraint firstAttribute="trailing" secondItem="jvv-u5-k6o" secondAttribute="trailing" id="baD-Z7-pJY"/>
+                                    <constraint firstItem="jvv-u5-k6o" firstAttribute="leading" secondItem="19W-aK-gim" secondAttribute="leading" id="wEc-bQ-Io7"/>
+                                    <constraint firstItem="jvv-u5-k6o" firstAttribute="top" secondItem="19W-aK-gim" secondAttribute="top" id="x6q-5Q-gAn"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="e4p-tP-CEx" id="x8F-ea-AEE"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fqC-a8-b4X" firstAttribute="bottom" secondItem="Nch-tp-lat" secondAttribute="bottom" constant="100" id="5Xf-Pf-od5"/>
-                            <constraint firstItem="fqC-a8-b4X" firstAttribute="trailing" secondItem="Nch-tp-lat" secondAttribute="trailing" constant="25" id="gRq-VX-LpU"/>
-                            <constraint firstItem="Nch-tp-lat" firstAttribute="leading" secondItem="fqC-a8-b4X" secondAttribute="leading" constant="25" id="kds-CX-AAX"/>
-                            <constraint firstItem="Nch-tp-lat" firstAttribute="top" secondItem="fqC-a8-b4X" secondAttribute="top" constant="20" id="neS-rL-zJC"/>
+                            <constraint firstItem="19W-aK-gim" firstAttribute="top" secondItem="fqC-a8-b4X" secondAttribute="top" id="4BR-4a-p8y"/>
+                            <constraint firstItem="19W-aK-gim" firstAttribute="trailing" secondItem="fqC-a8-b4X" secondAttribute="trailing" id="6eX-kU-GpD"/>
+                            <constraint firstItem="jvv-u5-k6o" firstAttribute="leading" secondItem="fqC-a8-b4X" secondAttribute="leading" id="7Ae-d0-Twa"/>
+                            <constraint firstItem="jvv-u5-k6o" firstAttribute="width" secondItem="hXs-Q6-at9" secondAttribute="width" id="BbI-v0-JRj"/>
+                            <constraint firstItem="19W-aK-gim" firstAttribute="bottom" secondItem="fqC-a8-b4X" secondAttribute="bottom" id="BeG-pX-IYE"/>
+                            <constraint firstItem="jvv-u5-k6o" firstAttribute="width" secondItem="19W-aK-gim" secondAttribute="width" id="S6m-Mm-XAc"/>
+                            <constraint firstItem="fqC-a8-b4X" firstAttribute="trailing" secondItem="jvv-u5-k6o" secondAttribute="trailing" id="l5U-PQ-f2X"/>
+                            <constraint firstItem="19W-aK-gim" firstAttribute="width" secondItem="hXs-Q6-at9" secondAttribute="width" id="qwc-6a-Qkw"/>
+                            <constraint firstItem="19W-aK-gim" firstAttribute="leading" secondItem="fqC-a8-b4X" secondAttribute="leading" id="shf-OF-NID"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fqC-a8-b4X"/>
                     </view>
                     <connections>
-                        <outlet property="displayDetail" destination="Wap-dQ-z9P" id="c3E-YA-EtD"/>
-                        <outlet property="titleOfView" destination="jSD-t7-5Bh" id="D0H-Pi-nuw"/>
-                        <outlet property="view" destination="hXs-Q6-at9" id="seE-tO-LMG"/>
+                        <outlet property="textInsideLable" destination="jvv-u5-k6o" id="VZH-j2-uyk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ssb-XZ-znO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1560.8" y="-665.21739130434787"/>
+            <point key="canvasLocation" x="1780" y="-665"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="25R-yl-kHu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vL0-b8-gkT" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Main" automaticallyAdjustsScrollViewInsets="NO" id="vL0-b8-gkT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xZf-hp-Ba4">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>

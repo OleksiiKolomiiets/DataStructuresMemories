@@ -10,9 +10,9 @@ import UIKit
 
 
 
-class DataStructuresMemoriesTableViewController: UITableViewController {
+class DataStructuresTableViewController: UITableViewController {
    
-    let dataStructModel = DataStructModel()
+    let dataStructModel = DataStructuresModel()
     
     // MARK: - UiTableViewController
 
@@ -34,9 +34,10 @@ class DataStructuresMemoriesTableViewController: UITableViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        self.navigationController?.pushViewController(DataStructViewController(), animated: false)
         if let identifire = segue.identifier {
             switch identifire {
-            case "Stack":
+            case "SegueId":
                 if let cell = sender as? CustomTableViewCell,
                 let indexPath = tableView.indexPath(for: cell),
                 let segueToStack = segue.destination as? DataStructViewController,
@@ -52,6 +53,7 @@ class DataStructuresMemoriesTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
         print(indexPath.row)
     }
     
