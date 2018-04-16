@@ -19,6 +19,7 @@ class DataStructViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Some Structure"
 //        titleOfView?.text = titleText
 //        if let number = cellNumber, let descrioption = descriptionOfDataStructure {
 //            displayDetail?.text = "\(number): \(descrioption)"

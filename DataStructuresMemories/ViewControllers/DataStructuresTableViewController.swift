@@ -29,6 +29,7 @@ class DataStructuresTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DataStructId", for: indexPath) as? CustomTableViewCell else {
             fatalError("Expected object: \(tableView.dequeueReusableCell(withIdentifier: "DataStructId", for: indexPath)) to be of type: CustomTableViewCell")
         }
+        self.navigationItem.title = "Data Structures"
         cell.configure(DataStructuresModel(indexPath.row))
         print(cell)
 //        cell.labelOfCell.text = dataStructModel.getNameOfDataStructureMemorise(at: indexPath.row)
@@ -38,7 +39,6 @@ class DataStructuresTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
 //        self.navigationController?.pushViewController(DataStructViewController(), animated: false)
 //        print(indexPath.row)
     }
