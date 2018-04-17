@@ -48,7 +48,7 @@ class DataStructuresTableViewController: UITableViewController {
         let currentDataStruct = dataStructModel.getDataStruct(at: indexPath.row)
         
         targetController.tappedCell = currentDataStruct
-        self.navigationController?.pushViewController(targetController, animated: false)
+        self.navigationController?.pushViewController(targetController, animated: true)
     }
     
     override func viewDidLoad() {
