@@ -16,8 +16,6 @@ extension CustomTableViewCell: ConfigurableCell {
     func configure(_ model: DataStructuresModel) {
         self.labelOfCell.text = model.currentDataStruct?.name
     }
-    
-    
 }
 
 

@@ -48,7 +48,6 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="labelOfCell" destination="4xc-Fp-qXR" id="YeV-EC-gkm"/>
-                                    <segue destination="e4p-tP-CEx" kind="show" identifier="SegueId" id="R82-2n-zvm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -69,13 +68,13 @@
         <!--Data Struct View Controller-->
         <scene sceneID="S5P-fo-A8i">
             <objects>
-                <viewController storyboardIdentifier="DetailId" id="e4p-tP-CEx" customClass="DataStructViewController" customModule="DataStructuresMemories" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DataStructId" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e4p-tP-CEx" customClass="DataStructViewController" customModule="DataStructuresMemories" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hXs-Q6-at9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19W-aK-gim">
-                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yvn-F3-09M">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44.5"/>
@@ -120,6 +119,7 @@
                     </view>
                     <connections>
                         <outlet property="textInsideLable" destination="xgp-xr-kWq" id="NRr-8v-jvx"/>
+                        <outlet property="view" destination="hXs-Q6-at9" id="pvq-X9-vdt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ssb-XZ-znO" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -24,23 +24,26 @@ class DataStructuresTableViewController: UITableViewController {
         return dataStructModel.getAmountOfRows()
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DataStructId", for: indexPath) as? CustomTableViewCell else {
             fatalError("Expected object: \(tableView.dequeueReusableCell(withIdentifier: "DataStructId", for: indexPath)) to be of type: CustomTableViewCell")
         }
         self.navigationItem.title = "Data Structures"
+        
         cell.configure(DataStructuresModel(indexPath.row))
         print(cell)
-//        cell.labelOfCell.text = dataStructModel.getNameOfDataStructureMemorise(at: indexPath.row)
-        
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-//        self.navigationController?.pushViewController(DataStructViewController(), animated: false)
-//        print(indexPath.row)
+        print(indexPath.row)
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let targetController = mainStoryboard.instantiateViewController(withIdentifier: "DataStructId") as? DataStructViewController else {
+            return
+        }
+        targetController.titleText = DataStructuresModel(indexPath.row).currentDataStruct?.name
+        self.navigationController?.pushViewController(targetController, animated: false)
     }
     
     override func viewDidLoad() {
