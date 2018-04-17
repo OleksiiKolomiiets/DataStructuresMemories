@@ -13,8 +13,8 @@ class CustomTableViewCell: UITableViewCell {
 }
 
 extension CustomTableViewCell: ConfigurableCell {
-    func configure(_ model: DataStructuresModel) {
-        self.labelOfCell.text = model.currentDataStruct?.name
+    func configure(_ model: DataStructModel) {
+        self.labelOfCell.text = model.title()
     }
 }
 

@@ -8,18 +8,23 @@
 
 import Foundation
 
-struct DataStructModel {
-    var name: String
+struct DataStructModel: DataStruct {
+    func title() -> String {
+        return titleOfDataStruct
+    }
+    
+    func descr() -> String {
+        return descriptionOfDataStruct
+    }
+    
+    init(with title: String, _ description: String) {
+        titleOfDataStruct = title
+        descriptionOfDataStruct = description
+    }
+    
+    private var titleOfDataStruct: String
+    private var descriptionOfDataStruct: String
+    
 }
 
-//extension DataStructModel: ConfigurableCell {
-//    mutating func configure(_ model: CustomTableViewCell) {
-//        
-//        model.labelOfCell.text = self.name
-//        
-////        getNameOfDataStructureMemorise(at: model)
-//    }
-//    
-//    
-//}
 

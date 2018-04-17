@@ -8,13 +8,15 @@
 
 import Foundation
 
-class DataStructuresModel: DataStruct {
-    init(_ indexOfName: Int) {
-        if let dataStruct = DataStructuresNames(rawValue: indexOfName) {
-            currentDataStruct = dataStruct
+class DataStructuresModel: DataStructures {
+    func getDataStruct(at index: Int) -> DataStructModel {
+        var dataStruct = DataStructModel(with: "title", "description")
+        if let title = DataStructuresNames(rawValue: index)?.name,
+            let description = DataStructuresNames(rawValue: index)?.description {
+             dataStruct = DataStructModel(with: title, description)
         }
+        return dataStruct
     }
-    var currentDataStruct: DataStructuresNames?
     
     enum DataStructuresNames: Int {
         case stack = 0, queue, set, dequeue, priorityQueue, listArray, multiSet, dictionary

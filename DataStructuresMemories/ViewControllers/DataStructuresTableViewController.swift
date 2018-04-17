@@ -12,7 +12,7 @@ import UIKit
 
 class DataStructuresTableViewController: UITableViewController {
    
-    let dataStructModel = DataStructuresModel(0)
+    let dataStructModel = DataStructuresModel()
     
     // MARK: - UiTableViewController
 
@@ -30,8 +30,11 @@ class DataStructuresTableViewController: UITableViewController {
         }
         self.navigationItem.title = "Data Structures"
         
-        cell.configure(DataStructuresModel(indexPath.row))
-        print(cell)
+        
+        let currentDataStruct = dataStructModel.getDataStruct(at: indexPath.row)
+        cell.configure(currentDataStruct)
+        
+        
         return cell
     }
 
@@ -42,7 +45,9 @@ class DataStructuresTableViewController: UITableViewController {
         guard let targetController = mainStoryboard.instantiateViewController(withIdentifier: "DataStructId") as? DataStructViewController else {
             return
         }
-        targetController.titleText = DataStructuresModel(indexPath.row).currentDataStruct?.name
+        let currentDataStruct = dataStructModel.getDataStruct(at: indexPath.row)
+        
+        targetController.tappedCell = currentDataStruct
         self.navigationController?.pushViewController(targetController, animated: false)
     }
     

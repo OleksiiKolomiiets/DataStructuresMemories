@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+protocol DataStruct {
+    func title() -> String
+    func descr() -> String
+}
