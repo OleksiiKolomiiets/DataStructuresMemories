@@ -10,6 +10,8 @@
 		F20DB621208499E300AE6F2F /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20DB620208499E300AE6F2F /* ConfigurableCell.swift */; };
 		F20DB6242084A19D00AE6F2F /* DataStructModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20DB6232084A19D00AE6F2F /* DataStructModel.swift */; };
 		F21B0E842085EB5F00682532 /* DataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21B0E832085EB5F00682532 /* DataStruct.swift */; };
+		F232A8682087382100EAB19F /* Descriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F232A8672087382100EAB19F /* Descriptions.swift */; };
+		F232A86A20873ABA00EAB19F /* Titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F232A86920873ABA00EAB19F /* Titles.swift */; };
 		F29CD86520808FF60099DADB /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD86420808FF60099DADB /* CustomTableViewCell.swift */; };
 		F2C6F130207F704500581510 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6F12F207F704500581510 /* AppDelegate.swift */; };
 		F2C6F135207F704500581510 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C6F133207F704500581510 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 		F20DB620208499E300AE6F2F /* ConfigurableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
 		F20DB6232084A19D00AE6F2F /* DataStructModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructModel.swift; sourceTree = "<group>"; };
 		F21B0E832085EB5F00682532 /* DataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStruct.swift; sourceTree = "<group>"; };
+		F232A8672087382100EAB19F /* Descriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptions.swift; sourceTree = "<group>"; };
+		F232A86920873ABA00EAB19F /* Titles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Titles.swift; sourceTree = "<group>"; };
 		F29CD86420808FF60099DADB /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		F2C6F12C207F704500581510 /* DataStructuresMemories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataStructuresMemories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2C6F12F207F704500581510 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +63,15 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		F232A86D2087473300EAB19F /* Information Source */ = {
+			isa = PBXGroup;
+			children = (
+				F232A86920873ABA00EAB19F /* Titles.swift */,
+				F232A8672087382100EAB19F /* Descriptions.swift */,
+			);
+			path = "Information Source";
+			sourceTree = "<group>";
+		};
 		F2C6F123207F704500581510 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +96,7 @@
 				F20DB6222084A17400AE6F2F /* ViewControllers */,
 				F2C6F133207F704500581510 /* Main.storyboard */,
 				F2C6F13B207F704500581510 /* Info.plist */,
+				F232A86D2087473300EAB19F /* Information Source */,
 				F2C6F142207F732A00581510 /* SupportFiles */,
 			);
 			path = DataStructuresMemories;
@@ -191,8 +205,10 @@
 			files = (
 				F20DB6242084A19D00AE6F2F /* DataStructModel.swift in Sources */,
 				F2CA9E4F2080B25B002E4654 /* DataStructures.swift in Sources */,
+				F232A86A20873ABA00EAB19F /* Titles.swift in Sources */,
 				F2CA9E4D2080B1AC002E4654 /* DataStructuresModel.swift in Sources */,
 				F2C6F144207F7AEF00581510 /* DataStructuresTableViewController.swift in Sources */,
+				F232A8682087382100EAB19F /* Descriptions.swift in Sources */,
 				F20DB621208499E300AE6F2F /* ConfigurableCell.swift in Sources */,
 				F21B0E842085EB5F00682532 /* DataStruct.swift in Sources */,
 				F29CD86520808FF60099DADB /* CustomTableViewCell.swift in Sources */,

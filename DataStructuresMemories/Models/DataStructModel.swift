@@ -9,11 +9,11 @@
 import Foundation
 
 struct DataStructModel: DataStruct {
-    func title() -> String {
+    var title: String {
         return titleOfDataStruct
     }
     
-    func descr() -> String {
+    var descr: String {
         return descriptionOfDataStruct
     }
     

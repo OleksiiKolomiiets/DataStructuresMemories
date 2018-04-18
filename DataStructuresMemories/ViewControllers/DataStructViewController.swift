@@ -15,7 +15,7 @@ class DataStructViewController: UIViewController {
     var tappedCell: DataStructModel?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = tappedCell?.title()
-        textInsideLable?.text = tappedCell?.descr()
+        self.navigationItem.title = tappedCell?.title
+        textInsideLable?.text = tappedCell?.descr
     }
 }
