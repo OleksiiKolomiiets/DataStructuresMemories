@@ -8,12 +8,12 @@
 
 import Foundation
 
-class DataStructuresModel: DataStructures {
-    func getDataStruct(at index: Int) -> DataStructModel {
-        var dataStruct = DataStructModel(with: "title", "description")
+class DataSourceModel: DataSource {
+    func getDataStruct(at index: Int) -> DataStructEntity {
+        var dataStruct = DataStructEntity(with: "title", "description")
         if let title = DataStructuresNames(rawValue: index)?.titleOfDataSturct,
             let description = DataStructuresNames(rawValue: index)?.description {
-             dataStruct = DataStructModel(with: title, description)
+             dataStruct = DataStructEntity(with: title, description)
         }
         return dataStruct
     }
@@ -48,7 +48,7 @@ class DataStructuresModel: DataStructures {
     
     func getNameOfDataStructureMemorise(at index: Int) -> String {
         guard let currentDataStructurName = DataStructuresNames(rawValue: index) else {
-             fatalError("Index: \(index) does not match the raw value of: DataStructuresNames.")
+            return "DataStructuresNames with raw value: \(index) has no title."
         }
         return currentDataStructurName.titleOfDataSturct
     }
@@ -60,7 +60,7 @@ class DataStructuresModel: DataStructures {
     func getDescription(of structure: String) -> String {
         guard let currentDataStruct = DataStructuresNames(rawValue: getCurrentIndex(of: structure))
         else {
-            fatalError("Name: \(structure) does not match any name of: DataStructuresNames.")
+            return "Error. No description for this : \(getCurrentIndex(of: structure))."
         }
         return currentDataStruct.description
     }

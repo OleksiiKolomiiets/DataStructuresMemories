@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F20DB621208499E300AE6F2F /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20DB620208499E300AE6F2F /* ConfigurableCell.swift */; };
-		F20DB6242084A19D00AE6F2F /* DataStructModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20DB6232084A19D00AE6F2F /* DataStructModel.swift */; };
+		F20DB6242084A19D00AE6F2F /* DataStructEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20DB6232084A19D00AE6F2F /* DataStructEntity.swift */; };
 		F21B0E842085EB5F00682532 /* DataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21B0E832085EB5F00682532 /* DataStruct.swift */; };
 		F232A8682087382100EAB19F /* Descriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F232A8672087382100EAB19F /* Descriptions.swift */; };
 		F232A86A20873ABA00EAB19F /* Titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F232A86920873ABA00EAB19F /* Titles.swift */; };
@@ -18,14 +18,14 @@
 		F2C6F137207F704500581510 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2C6F136207F704500581510 /* Assets.xcassets */; };
 		F2C6F13A207F704500581510 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C6F138207F704500581510 /* LaunchScreen.storyboard */; };
 		F2C6F144207F7AEF00581510 /* DataStructuresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6F143207F7AEF00581510 /* DataStructuresTableViewController.swift */; };
-		F2CA9E4D2080B1AC002E4654 /* DataStructuresModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CA9E4C2080B1AC002E4654 /* DataStructuresModel.swift */; };
-		F2CA9E4F2080B25B002E4654 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CA9E4E2080B25B002E4654 /* DataStructures.swift */; };
+		F2CA9E4D2080B1AC002E4654 /* DataSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CA9E4C2080B1AC002E4654 /* DataSourceModel.swift */; };
+		F2CA9E4F2080B25B002E4654 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CA9E4E2080B25B002E4654 /* DataSource.swift */; };
 		F2CA9E532080F19B002E4654 /* DataStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CA9E522080F19B002E4654 /* DataStructViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F20DB620208499E300AE6F2F /* ConfigurableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
-		F20DB6232084A19D00AE6F2F /* DataStructModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructModel.swift; sourceTree = "<group>"; };
+		F20DB6232084A19D00AE6F2F /* DataStructEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructEntity.swift; sourceTree = "<group>"; };
 		F21B0E832085EB5F00682532 /* DataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStruct.swift; sourceTree = "<group>"; };
 		F232A8672087382100EAB19F /* Descriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptions.swift; sourceTree = "<group>"; };
 		F232A86920873ABA00EAB19F /* Titles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Titles.swift; sourceTree = "<group>"; };
@@ -37,8 +37,8 @@
 		F2C6F139207F704500581510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2C6F13B207F704500581510 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2C6F143207F7AEF00581510 /* DataStructuresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructuresTableViewController.swift; sourceTree = "<group>"; };
-		F2CA9E4C2080B1AC002E4654 /* DataStructuresModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructuresModel.swift; sourceTree = "<group>"; };
-		F2CA9E4E2080B25B002E4654 /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
+		F2CA9E4C2080B1AC002E4654 /* DataSourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceModel.swift; sourceTree = "<group>"; };
+		F2CA9E4E2080B25B002E4654 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		F2CA9E522080F19B002E4654 /* DataStructViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,8 +115,8 @@
 		F2CA9E502080B2A4002E4654 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F2CA9E4C2080B1AC002E4654 /* DataStructuresModel.swift */,
-				F20DB6232084A19D00AE6F2F /* DataStructModel.swift */,
+				F2CA9E4C2080B1AC002E4654 /* DataSourceModel.swift */,
+				F20DB6232084A19D00AE6F2F /* DataStructEntity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -124,7 +124,7 @@
 		F2CA9E512080B5F3002E4654 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				F2CA9E4E2080B25B002E4654 /* DataStructures.swift */,
+				F2CA9E4E2080B25B002E4654 /* DataSource.swift */,
 				F20DB620208499E300AE6F2F /* ConfigurableCell.swift */,
 				F21B0E832085EB5F00682532 /* DataStruct.swift */,
 			);
@@ -203,10 +203,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F20DB6242084A19D00AE6F2F /* DataStructModel.swift in Sources */,
-				F2CA9E4F2080B25B002E4654 /* DataStructures.swift in Sources */,
+				F20DB6242084A19D00AE6F2F /* DataStructEntity.swift in Sources */,
+				F2CA9E4F2080B25B002E4654 /* DataSource.swift in Sources */,
 				F232A86A20873ABA00EAB19F /* Titles.swift in Sources */,
-				F2CA9E4D2080B1AC002E4654 /* DataStructuresModel.swift in Sources */,
+				F2CA9E4D2080B1AC002E4654 /* DataSourceModel.swift in Sources */,
 				F2C6F144207F7AEF00581510 /* DataStructuresTableViewController.swift in Sources */,
 				F232A8682087382100EAB19F /* Descriptions.swift in Sources */,
 				F20DB621208499E300AE6F2F /* ConfigurableCell.swift in Sources */,

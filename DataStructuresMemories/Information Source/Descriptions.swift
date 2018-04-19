@@ -8,7 +8,7 @@
 
 import Foundation
 
-let dataStructDescriptionSource: [DataStructuresModel.DataStructuresNames: String] = [
+let dataStructDescriptionSource: [DataSourceModel.DataStructuresNames: String] = [
     .stack: """
     For the use of the term LIFO in accounting, see LIFO (accounting). For the use of the term pushdown in strength training, see Pushdown (exercise). For other uses, see Stack (disambiguation).
     Simple representation of a stack runtime with push and pop operations. In computer science, a stack is an abstract data type that serves as a collection of elements, with two principal operations:

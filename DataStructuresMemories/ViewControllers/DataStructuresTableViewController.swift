@@ -12,7 +12,7 @@ import UIKit
 
 class DataStructuresTableViewController: UITableViewController {
    
-    let dataStructModel = DataStructuresModel()
+    let dataStructModel = DataSourceModel()
     
     // MARK: - UiTableViewController
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DataStructModel: DataStruct {
+struct DataStructEntity: DataStruct {
     var title: String {
         return titleOfDataStruct
     }

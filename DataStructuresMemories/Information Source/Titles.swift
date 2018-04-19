@@ -8,7 +8,7 @@
 
 import Foundation
 
-let dataStructTitlesSource: [DataStructuresModel.DataStructuresNames:String] = [
+let dataStructTitlesSource: [DataSourceModel.DataStructuresNames:String] = [
     .stack: "Stack",
     .queue: "Queue",
     .set: "Set",
