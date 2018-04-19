@@ -1,6 +1,6 @@
 //
 //  DataStructModel.swift
-//  DataStructuresMemories
+//  DataStructures
 //
 //  Created by Oleksii Kolomiiets on 4/13/18.
 //  Copyright © 2018 Oleksii Kolomiiets. All rights reserved.
@@ -8,7 +8,16 @@
 
 import Foundation
 
-class DataStructModel: DataStruct {
+class DataSourceModel: DataSource {
+    func getDataStruct(at index: Int) -> DataStructEntity {
+        var dataStruct = DataStructEntity(with: "title", "description")
+        if let title = DataStructuresNames(rawValue: index)?.titleOfDataSturct,
+            let description = DataStructuresNames(rawValue: index)?.description {
+             dataStruct = DataStructEntity(with: title, description)
+        }
+        return dataStruct
+    }
+    
     enum DataStructuresNames: Int {
         case stack = 0, queue, set, dequeue, priorityQueue, listArray, multiSet, dictionary
         
@@ -20,37 +29,28 @@ class DataStructModel: DataStruct {
             return max
         }
         
-        var name: String {
-            switch self {
-            case .stack:
-                return "Stack"
-            case .queue:
-                return "Queue"
-            case .set:
-                return "Set"
-            case .dequeue:
-                return "Dequeue"
-            case .priorityQueue:
-                return "PriorityQueue"
-            case .listArray:
-                return "List(Array)"
-            case .multiSet:
-                return "MultiSet"
-            case .dictionary:
-                return "Dictionary"
+        var titleOfDataSturct: String {
+            if let dataStructTitle = dataStructTitlesSource[self] {
+                return dataStructTitle
+            } else {
+                return "DataStructuresNames with raw value: \(self.rawValue) has no title."
             }
         }
         
         var description: String {
-            return "simple info about \(self.name)"
+            if let dataStructDescription = dataStructDescriptionSource[self] {
+                return dataStructDescription
+            } else {
+                return "\(self.titleOfDataSturct) has no description."
+            }
         }
     }
     
     func getNameOfDataStructureMemorise(at index: Int) -> String {
         guard let currentDataStructurName = DataStructuresNames(rawValue: index) else {
-             fatalError("Index: \(index) does not match the raw value of: DataStructuresNames")
+            return "DataStructuresNames with raw value: \(index) has no title."
         }
-        return currentDataStructurName.name
+        return currentDataStructurName.titleOfDataSturct
     }
     
     func getAmountOfRows() -> Int {
@@ -60,7 +60,7 @@ class DataStructModel: DataStruct {
     func getDescription(of structure: String) -> String {
         guard let currentDataStruct = DataStructuresNames(rawValue: getCurrentIndex(of: structure))
         else {
-            fatalError("Name: \(structure) does not match any name of: DataStructuresNames")
+            return "Error. No description for this : \(getCurrentIndex(of: structure))."
         }
         return currentDataStruct.description
     }
@@ -68,7 +68,7 @@ class DataStructModel: DataStruct {
     func getCurrentIndex(of name: String) -> Int {
         var index = 0
         while let currentName = DataStructuresNames(rawValue: index) {
-            if currentName.name == name {
+            if currentName.titleOfDataSturct == name {
                 return index
             }
             index += 1

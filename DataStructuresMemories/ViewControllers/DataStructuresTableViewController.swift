@@ -10,9 +10,9 @@ import UIKit
 
 
 
-class DataStructuresMemoriesTableViewController: UITableViewController {
+class DataStructuresTableViewController: UITableViewController {
    
-    let dataStructModel = DataStructModel()
+    let dataStructModel = DataSourceModel()
     
     // MARK: - UiTableViewController
 
@@ -24,35 +24,31 @@ class DataStructuresMemoriesTableViewController: UITableViewController {
         return dataStructModel.getAmountOfRows()
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DataStructId", for: indexPath) as? CustomTableViewCell else {
-            fatalError("Expected object: \(tableView.dequeueReusableCell(withIdentifier: "DataStructId", for: indexPath)) to be of type: CustomTableViewCell")
+            return UITableViewCell()
         }
-        cell.labelOfCell.text = dataStructModel.getNameOfDataStructureMemorise(at: indexPath.row)
+        self.navigationItem.title = "Data Structures"
+        
+        
+        let currentDataStruct = dataStructModel.getDataStruct(at: indexPath.row)
+        cell.configure(currentDataStruct)
+        
+        
         return cell
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifire = segue.identifier {
-            switch identifire {
-            case "Stack":
-                if let cell = sender as? CustomTableViewCell,
-                let indexPath = tableView.indexPath(for: cell),
-                let segueToStack = segue.destination as? DataStructViewController,
-                let content = cell.labelOfCell.text {
-                    segueToStack.titleText = content
-                    segueToStack.descriptionOfDataStructure = dataStructModel.getDescription(of: content)
-                    segueToStack.cellNumber = indexPath.row
-                }
-            default:
-                break
-            }
-        }
-    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         print(indexPath.row)
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let targetController = mainStoryboard.instantiateViewController(withIdentifier: "DataStructId") as? DataStructViewController else {
+            return
+        }
+        let currentDataStruct = dataStructModel.getDataStruct(at: indexPath.row)
+        
+        targetController.tappedCell = currentDataStruct
+        self.navigationController?.pushViewController(targetController, animated: true)
     }
     
     override func viewDidLoad() {

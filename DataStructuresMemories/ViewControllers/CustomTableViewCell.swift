@@ -11,3 +11,11 @@ import UIKit
 class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var labelOfCell: UILabel!
 }
+
+extension CustomTableViewCell: ConfigurableCell {
+    func configure(_ model: DataStruct) {
+        self.labelOfCell.text = model.title
+    }
+}
+
+
