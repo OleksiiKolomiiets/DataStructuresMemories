@@ -17,7 +17,7 @@ class URLPresenterModel: URLPresenterProtocol {
         presenter = titlesOfType[index]
     }
     
-    func getAmountOfPresenters() -> Int {
+    var amountOfPresenters:  Int {
         return titlesOfType.count
     }
     

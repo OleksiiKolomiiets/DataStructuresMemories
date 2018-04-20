@@ -80,7 +80,7 @@ class DataStructViewController: UIViewController {
         
         let presenter = URLPresenterModel()
         
-        for index in 0..<presenter.getAmountOfPresenters() {
+        for index in 0..<presenter.amountOfPresenters {
             presenter.setPresenter(by: index)
             waysToOpenWikiLink.addAction(UIAlertAction(
                 title: presenter.getTitleOfPresenter(),

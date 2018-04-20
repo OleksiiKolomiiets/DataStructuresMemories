@@ -11,7 +11,7 @@ import UIKit
 
 protocol URLPresenterProtocol {
     func setPresenter(by index: Int)
-    func getAmountOfPresenters() -> Int
+    var amountOfPresenters: Int { get }
     func getTitleOfPresenter() -> String
     func getStyleOfPresenter() -> UIAlertActionStyle
     func getAtcion()
