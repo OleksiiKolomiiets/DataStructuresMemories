@@ -86,10 +86,20 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jBf-cZ-Bjq">
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jBf-cZ-Bjq">
                                                 <rect key="frame" x="0.0" y="245" width="414" height="123"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="ButtId" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toy-7a-f0I">
+                                                <rect key="frame" x="187" y="333" width="41" height="35"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="19"/>
+                                                <state key="normal" title="More">
+                                                    <color key="titleColor" red="0.05414261668920517" green="0.91425061225891113" blue="0.14730888605117798" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="touchMoreButton:" destination="e4p-tP-CEx" eventType="touchUpInside" id="HPv-l3-BDl"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="xgp-xr-kWq" firstAttribute="height" secondItem="yvn-F3-09M" secondAttribute="height" id="1Nh-Iy-FP5"/>
@@ -97,28 +107,34 @@
                                             <constraint firstAttribute="bottom" secondItem="xgp-xr-kWq" secondAttribute="bottom" id="Bct-HR-xaR"/>
                                             <constraint firstItem="jBf-cZ-Bjq" firstAttribute="top" secondItem="yvn-F3-09M" secondAttribute="top" constant="245" id="L0K-wY-xzl"/>
                                             <constraint firstItem="xgp-xr-kWq" firstAttribute="leading" secondItem="yvn-F3-09M" secondAttribute="leading" constant="20" id="OGH-nn-Q9W"/>
+                                            <constraint firstAttribute="trailing" secondItem="toy-7a-f0I" secondAttribute="trailing" priority="25" id="P7O-GX-UiP"/>
+                                            <constraint firstItem="toy-7a-f0I" firstAttribute="bottom" secondItem="xgp-xr-kWq" secondAttribute="bottom" id="Pg7-hV-YR0"/>
                                             <constraint firstItem="jBf-cZ-Bjq" firstAttribute="bottom" secondItem="xgp-xr-kWq" secondAttribute="bottom" id="Qjz-S1-Bu9"/>
+                                            <constraint firstItem="toy-7a-f0I" firstAttribute="centerX" secondItem="yvn-F3-09M" secondAttribute="centerX" priority="999" id="d7X-id-Wml"/>
                                             <constraint firstAttribute="trailing" secondItem="xgp-xr-kWq" secondAttribute="trailing" constant="20" id="lkp-ax-lo4"/>
                                             <constraint firstItem="jBf-cZ-Bjq" firstAttribute="leading" secondItem="yvn-F3-09M" secondAttribute="leading" id="lna-lX-S07"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="ButtId" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toy-7a-f0I">
-                                        <rect key="frame" x="373" y="368" width="41" height="35"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hE-dF-K8a">
+                                        <rect key="frame" x="187" y="388" width="41" height="35"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="19"/>
-                                        <state key="normal" title="More">
-                                            <color key="titleColor" red="0.05414261668920517" green="0.91425061225891113" blue="0.14730888605117798" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Wiki">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="touchMoreButton:" destination="e4p-tP-CEx" eventType="touchUpInside" id="HPv-l3-BDl"/>
+                                            <action selector="touchWikiButton:" destination="e4p-tP-CEx" eventType="touchUpInside" id="aW3-yk-AhO"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="toy-7a-f0I" firstAttribute="top" secondItem="jBf-cZ-Bjq" secondAttribute="bottom" id="BhR-mc-xmj"/>
-                                    <constraint firstAttribute="trailing" secondItem="toy-7a-f0I" secondAttribute="trailing" id="cX2-2g-fIc"/>
-                                    <constraint firstAttribute="bottom" secondItem="yvn-F3-09M" secondAttribute="bottom" constant="100" id="esr-gk-wzF"/>
+                                    <constraint firstItem="toy-7a-f0I" firstAttribute="leading" secondItem="yvn-F3-09M" secondAttribute="leading" priority="250" constant="373" id="3X3-Q5-2xf"/>
+                                    <constraint firstItem="9hE-dF-K8a" firstAttribute="width" secondItem="toy-7a-f0I" secondAttribute="width" id="4eM-SA-vYb"/>
+                                    <constraint firstItem="9hE-dF-K8a" firstAttribute="height" secondItem="toy-7a-f0I" secondAttribute="height" id="8wG-Mb-8M5"/>
+                                    <constraint firstAttribute="bottom" secondItem="yvn-F3-09M" secondAttribute="bottom" id="esr-gk-wzF"/>
                                     <constraint firstItem="yvn-F3-09M" firstAttribute="leading" secondItem="19W-aK-gim" secondAttribute="leading" id="l7Z-TL-frq"/>
                                     <constraint firstAttribute="trailing" secondItem="yvn-F3-09M" secondAttribute="trailing" id="nev-0r-aCx"/>
+                                    <constraint firstItem="9hE-dF-K8a" firstAttribute="top" secondItem="toy-7a-f0I" secondAttribute="bottom" constant="20" id="oWN-wY-t5V"/>
+                                    <constraint firstItem="9hE-dF-K8a" firstAttribute="centerX" secondItem="yvn-F3-09M" secondAttribute="centerX" id="rXz-OS-aag"/>
                                     <constraint firstItem="yvn-F3-09M" firstAttribute="top" secondItem="19W-aK-gim" secondAttribute="top" id="utT-0w-puK"/>
                                 </constraints>
                                 <connections>
@@ -139,15 +155,18 @@
                         <viewLayoutGuide key="safeArea" id="fqC-a8-b4X"/>
                     </view>
                     <connections>
+                        <outlet property="centreXToggleButtonConstraint" destination="d7X-id-Wml" id="Lm6-dz-PSi"/>
                         <outlet property="childView" destination="yvn-F3-09M" id="RJz-Rt-bTa"/>
                         <outlet property="constraintToHeight" destination="JvG-jc-liY" id="640-42-Yh2"/>
                         <outlet property="gradientView" destination="jBf-cZ-Bjq" id="vtl-Pd-5pO"/>
-                        <outlet property="heightConstrains" destination="JvG-jc-liY" id="RqT-yb-VMW"/>
+                        <outlet property="leadingButtonConstraint" destination="3X3-Q5-2xf" id="PTe-EX-swc"/>
                         <outlet property="parentView" destination="hXs-Q6-at9" id="l3b-gS-0E7"/>
                         <outlet property="scrollView" destination="19W-aK-gim" id="uSR-nA-MQw"/>
                         <outlet property="textInsideLable" destination="xgp-xr-kWq" id="xm3-Rf-MIo"/>
                         <outlet property="toggleButton" destination="toy-7a-f0I" id="etH-2K-MnG"/>
+                        <outlet property="trailingToggleButtonConstraint" destination="P7O-GX-UiP" id="OQq-A9-WGd"/>
                         <outlet property="view" destination="hXs-Q6-at9" id="pvq-X9-vdt"/>
+                        <outlet property="wikiButton" destination="9hE-dF-K8a" id="IQh-x9-XzB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ssb-XZ-znO" userLabel="First Responder" sceneMemberID="firstResponder"/>

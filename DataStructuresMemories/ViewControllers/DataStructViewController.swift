@@ -26,49 +26,72 @@ class DataStructViewController: UIViewController {
     var isTextShrinked = true {
         didSet {
             let title = isTextShrinked ? "More" : "Less"
-            UIView.transition(with: scrollView,
-                              duration: 0.3,
-                              options: [.transitionFlipFromTop],
-                              animations: {
-                                self.toggleButton.changeTitle(to: title)
-                                }
+            let priorityForShrink = isTextShrinked ? UILayoutPriority(250) : UILayoutPriority(999)
+            let priorityForUnShrink = isTextShrinked ? UILayoutPriority(999) : UILayoutPriority(250)
+            UIView.transition(
+                with: childView,
+                duration: 0.3,
+                options: [.transitionFlipFromTop],
+                animations: {
+                    self.toggleButton.changeTitle(to: title)
+                    self.wikiButton.isHidden = !self.wikiButton.isHidden
+                    self.gradientView.isHidden = !self.gradientView.isHidden
+                    self.constraintToHeight.priority = priorityForUnShrink
+                    self.gradientView.updateConstraints()
+                }
             )
-            gradientView.isHidden = !gradientView.isHidden
-            constraintToHeight.priority = isTextShrinked ? UILayoutPriority(999) : UILayoutPriority(250)
-            gradientView.updateConstraints()
+            trailingToggleButtonConstraint.priority = priorityForShrink
+            leadingButtonConstraint.priority = priorityForShrink
+            centreXToggleButtonConstraint.priority = priorityForUnShrink
         }
+    }
+    @IBAction func touchWikiButton(_ sender: UIButton) {
+        presentWaysToOpenLink() 
     }
     
     @IBAction func touchMoreButton(_ sender: UIButton) {
         isTextShrinked = !isTextShrinked
-//        gradientView.isHidden = true
-//        constraintToHeight.priority = UILayoutPriority(250)
-//        gradientView.updateConstraints()
     }
     
+    @IBOutlet weak var trailingToggleButtonConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var leadingButtonConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var centreXToggleButtonConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var heightConstrains: NSLayoutConstraint!
     
     @IBOutlet weak var childView: UIView!
+    
     @IBOutlet var parentView: UIView!
     
     @IBOutlet weak var toggleButton: UIButton!
     
     @IBOutlet weak var constraintToHeight: NSLayoutConstraint!
+
+    @IBOutlet weak var wikiButton: UIButton!
     
-//    @IBOutlet weak var lessInformationButton: UIButton!
-//
-//    @IBAction func touchLessButton(_ sender: UIButton) {
-//        print(gradientView.isHidden)
-//        gradientView.isHidden = false
-//        lessInformationButton.isHidden = true
-//
-//        constraintToHeight.priority = UILayoutPriority(999)
-//        gradientView.updateConstraints()
-//
-//        print(constraintToHeight.multiplier)
-//    }
-//
+    func presentWaysToOpenLink() {
+        let waysToOpenWikiLink = UIAlertController(
+            title: "Links To Wikipedia",
+            message: "Choose the way to open wikipedia page with more information.",
+            preferredStyle: .actionSheet
+        )
+        
+        let presenter = URLPresenterModel()
+        
+        for index in 0..<presenter.getAmountOfPresenters() {
+            presenter.setPresenter(by: index)
+            waysToOpenWikiLink.addAction(UIAlertAction(
+                title: presenter.getTitleOfPresenter(),
+                style: presenter.getStyleOfPresenter(),
+                handler: { action in
+                    print(action)
+            }))
+        }
+        
+        present(waysToOpenWikiLink, animated: true, completion: nil)
+    }
 }
 
 extension UIView {

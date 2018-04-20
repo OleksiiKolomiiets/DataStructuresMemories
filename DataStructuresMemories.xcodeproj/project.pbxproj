@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		F20DB621208499E300AE6F2F /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20DB620208499E300AE6F2F /* ConfigurableCell.swift */; };
 		F20DB6242084A19D00AE6F2F /* DataStructEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20DB6232084A19D00AE6F2F /* DataStructEntity.swift */; };
-		F20E4D1C2089D2C3008484BB /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20E4D1B2089D2C3008484BB /* Links.swift */; };
+		F20E4D1E208A3D13008484BB /* URLPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20E4D1D208A3D13008484BB /* URLPresenter.swift */; };
+		F20E4D20208A3D42008484BB /* URLPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20E4D1F208A3D42008484BB /* URLPresenterProtocol.swift */; };
 		F21B0E842085EB5F00682532 /* DataStructProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21B0E832085EB5F00682532 /* DataStructProtocol.swift */; };
 		F232A8682087382100EAB19F /* Descriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F232A8672087382100EAB19F /* Descriptions.swift */; };
-		F232A86A20873ABA00EAB19F /* Titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F232A86920873ABA00EAB19F /* Titles.swift */; };
 		F29CD86520808FF60099DADB /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD86420808FF60099DADB /* CustomTableViewCell.swift */; };
 		F2C6F130207F704500581510 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6F12F207F704500581510 /* AppDelegate.swift */; };
 		F2C6F135207F704500581510 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C6F133207F704500581510 /* Main.storyboard */; };
@@ -27,10 +27,10 @@
 /* Begin PBXFileReference section */
 		F20DB620208499E300AE6F2F /* ConfigurableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
 		F20DB6232084A19D00AE6F2F /* DataStructEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructEntity.swift; sourceTree = "<group>"; };
-		F20E4D1B2089D2C3008484BB /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
+		F20E4D1D208A3D13008484BB /* URLPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPresenter.swift; sourceTree = "<group>"; };
+		F20E4D1F208A3D42008484BB /* URLPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPresenterProtocol.swift; sourceTree = "<group>"; };
 		F21B0E832085EB5F00682532 /* DataStructProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructProtocol.swift; sourceTree = "<group>"; };
 		F232A8672087382100EAB19F /* Descriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptions.swift; sourceTree = "<group>"; };
-		F232A86920873ABA00EAB19F /* Titles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Titles.swift; sourceTree = "<group>"; };
 		F29CD86420808FF60099DADB /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		F2C6F12C207F704500581510 /* DataStructuresMemories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataStructuresMemories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2C6F12F207F704500581510 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,8 +68,6 @@
 		F232A86D2087473300EAB19F /* Information Source */ = {
 			isa = PBXGroup;
 			children = (
-				F20E4D1B2089D2C3008484BB /* Links.swift */,
-				F232A86920873ABA00EAB19F /* Titles.swift */,
 				F232A8672087382100EAB19F /* Descriptions.swift */,
 			);
 			path = "Information Source";
@@ -120,6 +118,7 @@
 			children = (
 				F2CA9E4C2080B1AC002E4654 /* DataSourceModel.swift */,
 				F20DB6232084A19D00AE6F2F /* DataStructEntity.swift */,
+				F20E4D1D208A3D13008484BB /* URLPresenter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -130,6 +129,7 @@
 				F2CA9E4E2080B25B002E4654 /* DataSource.swift */,
 				F20DB620208499E300AE6F2F /* ConfigurableCell.swift */,
 				F21B0E832085EB5F00682532 /* DataStructProtocol.swift */,
+				F20E4D1F208A3D42008484BB /* URLPresenterProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -208,14 +208,14 @@
 			files = (
 				F20DB6242084A19D00AE6F2F /* DataStructEntity.swift in Sources */,
 				F2CA9E4F2080B25B002E4654 /* DataSource.swift in Sources */,
-				F232A86A20873ABA00EAB19F /* Titles.swift in Sources */,
+				F20E4D20208A3D42008484BB /* URLPresenterProtocol.swift in Sources */,
 				F2CA9E4D2080B1AC002E4654 /* DataSourceModel.swift in Sources */,
 				F2C6F144207F7AEF00581510 /* DataStructuresTableViewController.swift in Sources */,
 				F232A8682087382100EAB19F /* Descriptions.swift in Sources */,
 				F20DB621208499E300AE6F2F /* ConfigurableCell.swift in Sources */,
-				F20E4D1C2089D2C3008484BB /* Links.swift in Sources */,
 				F21B0E842085EB5F00682532 /* DataStructProtocol.swift in Sources */,
 				F29CD86520808FF60099DADB /* CustomTableViewCell.swift in Sources */,
+				F20E4D1E208A3D13008484BB /* URLPresenter.swift in Sources */,
 				F2C6F130207F704500581510 /* AppDelegate.swift in Sources */,
 				F2CA9E532080F19B002E4654 /* DataStructViewController.swift in Sources */,
 			);

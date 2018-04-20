@@ -31,27 +31,15 @@ class DataSourceModel: DataSource {
         }
         
         var titleOfDataSturct: String {
-            if let dataStructTitle = dataStructTitlesSource[self] {
-                return dataStructTitle
-            } else {
-                return "DataStructuresNames with raw value: \(self.rawValue) has no title."
-            }
+            return dataStructTitlesSource[self.rawValue]
         }
         
         var description: String {
-            if let dataStructDescription = dataStructDescriptionsSource[self] {
-                return dataStructDescription
-            } else {
-                return "DataStructuresNames with raw value: \(self.rawValue) has no description."
-            }
+            return dataStructDescriptionsSource[self.rawValue]
         }
         
         var link: String {
-            if let dataStructLink = dataStructLinksSource[self] {
-                return dataStructLink
-            } else {
-                return "DataStructuresNames with raw value: \(self.rawValue) has no link."
-            }
+            return dataStructLinksSource[self.rawValue]
         }
     }
     
@@ -85,6 +73,17 @@ class DataSourceModel: DataSource {
         return -1
     }
     
-    
-    
 }
+
+let dataStructTitlesSource = [ "Stack", "Queue", "Set", "Dequeue", "PriorityQueue", "List(Array)", "MultiSet", "Dictionary" ]
+
+let dataStructLinksSource: [String] = [
+    "https://en.wikipedia.org/wiki/Stack_(abstract_data_type)",
+    "https://en.wikipedia.org/wiki/Queue_(abstract_data_type)",
+    "https://en.wikipedia.org/wiki/Set_(abstract_data_type)",
+    "https://en.wikipedia.org/wiki/Double-ended_queue",
+    "https://en.wikipedia.org/wiki/Priority_queue",
+    "https://en.wikipedia.org/wiki/Dynamic_array",
+    "https://en.wikipedia.org/wiki/Multiset",
+    "https://en.wikipedia.org/wiki/Associative_array"
+]
