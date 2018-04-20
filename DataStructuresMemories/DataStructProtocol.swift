@@ -8,7 +8,8 @@
 
 import Foundation
 
-protocol DataStruct {
+protocol DataStructProtocol {
     var title: String { get }
     var descr: String { get }
+    var link: String { get }
 }

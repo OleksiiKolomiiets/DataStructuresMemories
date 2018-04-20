@@ -12,7 +12,7 @@ class DataStructViewController: UIViewController {
     
     @IBOutlet weak var textInsideLable: UILabel!
     
-    var tappedCell: DataStruct?
+    var tappedCell: DataStructProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,34 +23,52 @@ class DataStructViewController: UIViewController {
     
     @IBOutlet weak var gradientView: UIView!
     
-    
-    @IBAction func touchMoreButton(_ sender: UIButton) {
-        print("more")
-        gradientView.isHidden = true
-        lessInformationButton.isHidden = false
-        constraintToHeight.priority = UILayoutPriority(250)
-//        parentView.co
+    var isTextShrinked = true {
+        didSet {
+            let title = isTextShrinked ? "More" : "Less"
+            UIView.transition(with: scrollView,
+                              duration: 0.3,
+                              options: [.transitionFlipFromTop],
+                              animations: {
+                                self.toggleButton.changeTitle(to: title)
+                                }
+            )
+            gradientView.isHidden = !gradientView.isHidden
+            constraintToHeight.priority = isTextShrinked ? UILayoutPriority(999) : UILayoutPriority(250)
+            gradientView.updateConstraints()
+        }
     }
     
+    @IBAction func touchMoreButton(_ sender: UIButton) {
+        isTextShrinked = !isTextShrinked
+//        gradientView.isHidden = true
+//        constraintToHeight.priority = UILayoutPriority(250)
+//        gradientView.updateConstraints()
+    }
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var heightConstrains: NSLayoutConstraint!
     
     @IBOutlet weak var childView: UIView!
     @IBOutlet var parentView: UIView!
     
-    @IBOutlet weak var moreInformationButton: UIButton!
+    @IBOutlet weak var toggleButton: UIButton!
     
     @IBOutlet weak var constraintToHeight: NSLayoutConstraint!
     
-    @IBOutlet weak var lessInformationButton: UIButton!
-    
-    @IBAction func touchLessButton(_ sender: UIButton) {
-        print(gradientView.isHidden)
-        gradientView.isHidden = false
-        lessInformationButton.isHidden = true
-        
-        constraintToHeight.priority = UILayoutPriority(999)
-    }
-    
+//    @IBOutlet weak var lessInformationButton: UIButton!
+//
+//    @IBAction func touchLessButton(_ sender: UIButton) {
+//        print(gradientView.isHidden)
+//        gradientView.isHidden = false
+//        lessInformationButton.isHidden = true
+//
+//        constraintToHeight.priority = UILayoutPriority(999)
+//        gradientView.updateConstraints()
+//
+//        print(constraintToHeight.multiplier)
+//    }
+//
 }
 
 extension UIView {
@@ -60,5 +78,14 @@ extension UIView {
         gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
         gradient.locations = [0.0, 1.0]
         self.layer.mask = gradient
+    }
+}
+
+extension UIButton {
+    func changeTitle(to newTitle: String) {
+        self.setTitle(newTitle, for: UIControlState.normal)
+        self.setTitle(newTitle, for: UIControlState.selected)
+        self.setTitle(newTitle, for: UIControlState.focused)
+        self.setTitle(newTitle, for: UIControlState.disabled)
     }
 }

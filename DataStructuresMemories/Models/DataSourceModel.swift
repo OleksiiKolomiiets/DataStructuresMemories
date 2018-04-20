@@ -10,10 +10,11 @@ import Foundation
 
 class DataSourceModel: DataSource {
     func getDataStruct(at index: Int) -> DataStructEntity {
-        var dataStruct = DataStructEntity(with: "title", "description")
+        var dataStruct = DataStructEntity(with: "title", "description", "link")
         if let title = DataStructuresNames(rawValue: index)?.titleOfDataSturct,
-            let description = DataStructuresNames(rawValue: index)?.description {
-             dataStruct = DataStructEntity(with: title, description)
+            let description = DataStructuresNames(rawValue: index)?.description ,
+            let link = DataStructuresNames(rawValue: index)?.link {
+             dataStruct = DataStructEntity(with: title, description, link)
         }
         return dataStruct
     }
@@ -38,10 +39,18 @@ class DataSourceModel: DataSource {
         }
         
         var description: String {
-            if let dataStructDescription = dataStructDescriptionSource[self] {
+            if let dataStructDescription = dataStructDescriptionsSource[self] {
                 return dataStructDescription
             } else {
-                return "\(self.titleOfDataSturct) has no description."
+                return "DataStructuresNames with raw value: \(self.rawValue) has no description."
+            }
+        }
+        
+        var link: String {
+            if let dataStructLink = dataStructLinksSource[self] {
+                return dataStructLink
+            } else {
+                return "DataStructuresNames with raw value: \(self.rawValue) has no link."
             }
         }
     }
