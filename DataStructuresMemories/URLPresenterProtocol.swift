@@ -14,7 +14,7 @@ protocol URLPresenterProtocol {
     var amountOfPresenters: Int { get }
     func getTitleOfPresenter() -> String
     func getStyleOfPresenter() -> UIAlertActionStyle
-    func getAtcion()
+    func getAtcion(by controller: DetailViewController, with type: PresentersType) -> () -> Void 
 }
 
 

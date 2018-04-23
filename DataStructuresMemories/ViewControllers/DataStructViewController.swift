@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DataStructViewController: UIViewController {
+class DetailViewController: UIViewController {
     
     @IBOutlet weak var textInsideLable: UILabel!
     
@@ -32,12 +32,12 @@ class DataStructViewController: UIViewController {
                 with: childView,
                 duration: 0.3,
                 options: [.transitionFlipFromTop],
-                animations: {
-                    self.toggleButton.changeTitle(to: title)
-                    self.wikiButton.isHidden = !self.wikiButton.isHidden
-                    self.gradientView.isHidden = !self.gradientView.isHidden
-                    self.constraintToHeight.priority = priorityForUnShrink
-                    self.gradientView.updateConstraints()
+                animations: { [ weak self ]  in
+                    self?.toggleButton.changeTitle(to: title)
+                    self?.wikiButton.isHidden = !(self?.wikiButton.isHidden)!
+                    self?.gradientView.isHidden = !(self?.gradientView.isHidden)!
+                    self?.constraintToHeight.priority = priorityForUnShrink
+                    self?.gradientView.updateConstraints()
                 }
             )
             trailingToggleButtonConstraint.priority = priorityForShrink
@@ -78,18 +78,21 @@ class DataStructViewController: UIViewController {
             preferredStyle: .actionSheet
         )
         
-        let presenter = URLPresenterModel()
+        let presenter = URLPresenterManager()
         
-        for index in 0..<presenter.amountOfPresenters {
+        for index in 0 ..< presenter.amountOfPresenters {
+            
             presenter.setPresenter(by: index)
+            let cuurentPresenter = presenter.presenter!
             waysToOpenWikiLink.addAction(UIAlertAction(
                 title: presenter.getTitleOfPresenter(),
                 style: presenter.getStyleOfPresenter(),
-                handler: { action in
-                    print(action)
-            }))
+                handler:  { action in
+                    presenter.getAtcion(by: self, with: cuurentPresenter)()
+                    
+            }
+            ))
         }
-        
         present(waysToOpenWikiLink, animated: true, completion: nil)
     }
 }
