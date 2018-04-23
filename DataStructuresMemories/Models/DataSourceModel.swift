@@ -31,7 +31,7 @@ class DataSourceModel: DataSource {
         }
         
         var titleOfDataSturct: String {
-            return dataStructTitlesSource[self.rawValue]
+            return dataStructNames[self.rawValue]
         }
         
         var description: String {
@@ -39,7 +39,7 @@ class DataSourceModel: DataSource {
         }
         
         var link: String {
-            return dataStructLinksSource[self.rawValue]
+            return dataStructLinks[self.rawValue]
         }
     }
     
@@ -75,9 +75,9 @@ class DataSourceModel: DataSource {
     
 }
 
-let dataStructTitlesSource = [ "Stack", "Queue", "Set", "Dequeue", "PriorityQueue", "List(Array)", "MultiSet", "Dictionary" ]
+let dataStructNames = [ "Stack", "Queue", "Set", "Dequeue", "PriorityQueue", "List(Array)", "MultiSet", "Dictionary" ]
 
-let dataStructLinksSource: [String] = [
+let dataStructLinks = [
     "https://en.wikipedia.org/wiki/Stack_(abstract_data_type)",
     "https://en.wikipedia.org/wiki/Queue_(abstract_data_type)",
     "https://en.wikipedia.org/wiki/Set_(abstract_data_type)",

@@ -10,6 +10,7 @@ import SafariServices
 
 class SFSafaryPresenter: UIViewController, PresenterProtocol, SFSafariViewControllerDelegate {
     var link: String?
+    var isDone = false
     
     @IBOutlet weak var safaryView: UIWebView!
     
@@ -19,7 +20,12 @@ class SFSafaryPresenter: UIViewController, PresenterProtocol, SFSafariViewContro
         if let link = link, let url = URL(string: link) {
             let safariVC = SFSafariViewController(url: url, entersReaderIfAvailable: false)
             safariVC.delegate = self
-            self.present(safariVC, animated: true, completion: nil)
+            
+            if isDone {
+                dismiss(animated: true)
+            } else {
+                self.present(safariVC, animated: true)
+            }
         }
     }
     
@@ -36,7 +42,7 @@ class SFSafaryPresenter: UIViewController, PresenterProtocol, SFSafariViewContro
     }
     
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-        controller.dismiss(animated: true, completion: nil)
+        isDone = true
     }
 
     /*

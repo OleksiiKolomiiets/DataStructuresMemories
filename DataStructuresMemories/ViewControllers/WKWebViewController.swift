@@ -10,17 +10,11 @@ import UIKit
 import WebKit
 
 class WKWebViewController: UIViewController, WKNavigationDelegate, PresenterProtocol {
-
    
     var webView: WKWebView!
     
-    override func loadView() {
-        webView = WKWebView()
-        webView.navigationDelegate = self
-        view = webView
-        
-        
-    }
+    
+    @IBOutlet weak var wkWebView: UIView!
     
     var link: String?
     
@@ -33,17 +27,18 @@ class WKWebViewController: UIViewController, WKNavigationDelegate, PresenterProt
         
         print("WKWeb")
         webView.load(URLRequest(url: url))
-//        webView.allowsBackForwardNavigationGestures = true
-//        webView.goForward()
-        
-        let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
-        toolbarItems = [refresh]
-        navigationController?.isToolbarHidden = false
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func loadView() {
+        webView = WKWebView()
+        webView.navigationDelegate = self
+        view = webView
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

@@ -42,18 +42,10 @@ class URLPresenterManager: URLPresenterProtocol {
             switch type {
             case .Cancel:
                 break
-            case .WKWebView:
-                guard let targetController = mainStoryboard.instantiateViewController(withIdentifier: type.rawValue) as? WKWebViewController else { return }
+            default:
+                guard var targetController = mainStoryboard.instantiateViewController(withIdentifier: type.rawValue) as? PresenterProtocol else { return }
                 targetController.link = controller.tappedCell?.link
-                controller.navigationController?.present(targetController, animated: true)
-            case .UIWebView:
-                guard let targetController = mainStoryboard.instantiateViewController(withIdentifier: type.rawValue) as? UIWebViewPresenter else { return }
-                targetController.link = controller.tappedCell?.link
-                controller.navigationController?.present(targetController, animated: true)
-            case .SFSafary:
-                guard let targetController = mainStoryboard.instantiateViewController(withIdentifier: type.rawValue) as? SFSafaryPresenter else { return }
-                targetController.link = controller.tappedCell?.link
-                controller.navigationController?.present(targetController, animated: true)
+                controller.navigationController?.present(targetController as! UIViewController, animated: true)
             }
         }
     }
@@ -77,26 +69,4 @@ enum PresentersType: String {
             return .cancel
         }
     }
-    
-    var controllerName: () {
-        switch self {
-        case .SFSafary:
-            return someFunc()
-        case .UIWebView:
-            return someFunc()
-        case .WKWebView:
-            return someFunc()
-        case .Cancel:
-            return someFunc()
-        }
-    }
-}
-
-func someFunc() {
-    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-    guard let targetController = mainStoryboard.instantiateViewController(withIdentifier: "WK") as? WKWebViewController else { return }
-    guard let detailController = mainStoryboard.instantiateViewController(withIdentifier: "DataStructId") as? DetailViewController else { return }
-    guard let link = detailController.tappedCell?.link else { return }
-    targetController.link = link
-    detailController.navigationController?.present(targetController, animated: true)
 }
