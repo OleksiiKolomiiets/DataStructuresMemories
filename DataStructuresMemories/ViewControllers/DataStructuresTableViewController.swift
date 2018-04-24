@@ -41,13 +41,15 @@ class DataStructuresTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         print(indexPath.row)
+        
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let targetController = mainStoryboard.instantiateViewController(withIdentifier: "DataStructId") as? DataStructViewController else {
+        guard let targetController = mainStoryboard.instantiateViewController(withIdentifier: "DataStructId") as? DetailViewController else {
             return
         }
         let currentDataStruct = dataStructModel.getDataStruct(at: indexPath.row)
         
         targetController.tappedCell = currentDataStruct
+        
         self.navigationController?.pushViewController(targetController, animated: true)
     }
     

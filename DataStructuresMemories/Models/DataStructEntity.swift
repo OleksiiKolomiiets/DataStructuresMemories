@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DataStructEntity: DataStruct {
+struct DataStructEntity: DataStructProtocol {
     var title: String {
         return titleOfDataStruct
     }
@@ -17,13 +17,19 @@ struct DataStructEntity: DataStruct {
         return descriptionOfDataStruct
     }
     
-    init(with title: String, _ description: String) {
+    var link: String {
+        return linkOfDataStruct
+    }
+    
+    init(with title: String, _ description: String, _ link: String) {
         titleOfDataStruct = title
         descriptionOfDataStruct = description
+        linkOfDataStruct = link
     }
     
     private var titleOfDataStruct: String
     private var descriptionOfDataStruct: String
+    private var linkOfDataStruct: String
     
 }
 

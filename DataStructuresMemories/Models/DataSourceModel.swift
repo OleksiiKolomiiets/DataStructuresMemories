@@ -10,10 +10,11 @@ import Foundation
 
 class DataSourceModel: DataSource {
     func getDataStruct(at index: Int) -> DataStructEntity {
-        var dataStruct = DataStructEntity(with: "title", "description")
+        var dataStruct = DataStructEntity(with: "title", "description", "link")
         if let title = DataStructuresNames(rawValue: index)?.titleOfDataSturct,
-            let description = DataStructuresNames(rawValue: index)?.description {
-             dataStruct = DataStructEntity(with: title, description)
+            let description = DataStructuresNames(rawValue: index)?.description ,
+            let link = DataStructuresNames(rawValue: index)?.link {
+             dataStruct = DataStructEntity(with: title, description, link)
         }
         return dataStruct
     }
@@ -30,19 +31,15 @@ class DataSourceModel: DataSource {
         }
         
         var titleOfDataSturct: String {
-            if let dataStructTitle = dataStructTitlesSource[self] {
-                return dataStructTitle
-            } else {
-                return "DataStructuresNames with raw value: \(self.rawValue) has no title."
-            }
+            return dataStructNames[self.rawValue]
         }
         
         var description: String {
-            if let dataStructDescription = dataStructDescriptionSource[self] {
-                return dataStructDescription
-            } else {
-                return "\(self.titleOfDataSturct) has no description."
-            }
+            return dataStructDescriptionsSource[self.rawValue]
+        }
+        
+        var link: String {
+            return dataStructLinks[self.rawValue]
         }
     }
     
@@ -76,6 +73,17 @@ class DataSourceModel: DataSource {
         return -1
     }
     
-    
-    
 }
+
+let dataStructNames = [ "Stack", "Queue", "Set", "Dequeue", "PriorityQueue", "List(Array)", "MultiSet", "Dictionary" ]
+
+let dataStructLinks = [
+    "https://en.wikipedia.org/wiki/Stack_(abstract_data_type)",
+    "https://en.wikipedia.org/wiki/Queue_(abstract_data_type)",
+    "https://en.wikipedia.org/wiki/Set_(abstract_data_type)",
+    "https://en.wikipedia.org/wiki/Double-ended_queue",
+    "https://en.wikipedia.org/wiki/Priority_queue",
+    "https://en.wikipedia.org/wiki/Dynamic_array",
+    "https://en.wikipedia.org/wiki/Multiset",
+    "https://en.wikipedia.org/wiki/Associative_array"
+]
