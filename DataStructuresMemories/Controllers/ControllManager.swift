@@ -18,21 +18,11 @@ class ATDControlManager: ATDControlProtocol {
     var typeOfDataStruct: DataType
     
     func createMenu() -> [TypeButton] {
-        var collectionButtons = [TypeButton]()
-        let numberOfButtons = typeOfDataStruct.buttons.count
-        for index in 0..<numberOfButtons {
-            let title = typeOfDataStruct.buttons[index].rawValue
-            collectionButtons.append(createButton(named: title))
-        }
-        return collectionButtons
+        return typeOfDataStruct.buttons.map { $0 }
     }
 
     private func createButton(named title: String) -> TypeButton {
-        if let button = TypeButton(rawValue: title) {
-            return button
-        } else {
-            return TypeButton.now
-        }
+        return TypeButton(rawValue: title) ?? TypeButton.defaultButton
     }
 }
 
@@ -42,16 +32,12 @@ enum DataType {
     var buttons: [TypeButton] {
         switch self {
         case .stack:
-            return [.go, .back, .now]
+            return [.now, .back, .now]
         }
     }
     
 }
 
 enum TypeButton: String {
-    case go, back, now
-    
-    func getTypeOfItem() {
-    
-    }
+    case go, back, now, defaultButton
 }

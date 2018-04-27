@@ -166,16 +166,15 @@
                     </view>
                     <connections>
                         <outlet property="centreXToggleButtonConstraint" destination="d7X-id-Wml" id="Lm6-dz-PSi"/>
-                        <outlet property="childView" destination="yvn-F3-09M" id="RJz-Rt-bTa"/>
                         <outlet property="constraintToHeight" destination="JvG-jc-liY" id="640-42-Yh2"/>
                         <outlet property="gradientView" destination="jBf-cZ-Bjq" id="vtl-Pd-5pO"/>
                         <outlet property="leadingButtonConstraint" destination="3X3-Q5-2xf" id="PTe-EX-swc"/>
-                        <outlet property="parentView" destination="hXs-Q6-at9" id="l3b-gS-0E7"/>
                         <outlet property="scrollView" destination="19W-aK-gim" id="uSR-nA-MQw"/>
                         <outlet property="textInsideLable" destination="xgp-xr-kWq" id="xm3-Rf-MIo"/>
                         <outlet property="toggleButton" destination="toy-7a-f0I" id="etH-2K-MnG"/>
                         <outlet property="trailingToggleButtonConstraint" destination="P7O-GX-UiP" id="OQq-A9-WGd"/>
                         <outlet property="view" destination="hXs-Q6-at9" id="pvq-X9-vdt"/>
+                        <outlet property="viewWithDataStructDetailes" destination="yvn-F3-09M" id="RJz-Rt-bTa"/>
                         <outlet property="wikiButton" destination="9hE-dF-K8a" id="IQh-x9-XzB"/>
                     </connections>
                 </viewController>

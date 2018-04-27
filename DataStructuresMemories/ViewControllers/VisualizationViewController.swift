@@ -11,29 +11,17 @@ import UIKit
 class VisualizationViewController: UIViewController {
     
     var embededController: FakeDataTableViewController?
-    var titleOfController: String?
+    var titleOfController: String!
 
     @IBOutlet weak var containerForControlls: UIStackView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let title = titleOfController {
-            self.navigationItem.title = "Visual of \(title)"
-        }
-        
-        var controlManager = ATDControlManager(for: .stack)
-        
-        addControls(controlManager.createMenu(), view: containerForControlls)
-        
-        print(controlManager.createMenu())
-        
-//        let popButton = createButton(named: "POP")
-//        containerForControlls.addArrangedSubview(popButton)
-//
-//        let pushButton = createButton(named: "PUSH")
-//        containerForControlls.addArrangedSubview(pushButton)
-        // Do any additional setup after loading the view.
+        self.navigationItem.title = "Visual of \(titleOfController)"
+        let controlManager = ATDControlManager(for: .stack)
+        let menu = controlManager.createMenu()
+        addControls(menu, view: containerForControlls)
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,24 +37,9 @@ class VisualizationViewController: UIViewController {
         }
         
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected objec.normat to the new view controller.
-    }
-    */
-    
-    
     
     func addControls(_ button: [TypeButton], view: UIStackView) {
-        for index in 0..<button.count {
-            let button = UIButton.getButtonByType(button[index])
-            view.addArrangedSubview(button)
-        }
+        button.forEach { view.addArrangedSubview(UIButton.getButtonByType($0)) }
     }
     
     @objc func touch() {

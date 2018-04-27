@@ -10,4 +10,15 @@ import Foundation
 
 protocol PresenterProtocol {
     var link: String? { get set }
+    var url: URL? { get }
+}
+
+extension PresenterProtocol {
+    var url: URL? {
+        if let link = self.link {
+            return URL(string: link)
+        } else {
+            return nil
+        }
+    }
 }

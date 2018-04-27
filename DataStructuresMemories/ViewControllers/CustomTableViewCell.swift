@@ -13,7 +13,7 @@ class CustomTableViewCell: UITableViewCell {
 }
 
 extension CustomTableViewCell: ConfigurableCell {
-    func configure(_ model: DataStructProtocol) {
+    func configure(with model: DataStructProtocol) {
         self.labelOfCell.text = model.title
     }
 }

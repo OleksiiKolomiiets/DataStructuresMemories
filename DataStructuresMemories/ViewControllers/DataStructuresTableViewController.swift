@@ -28,11 +28,10 @@ class DataStructuresTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DataStructId", for: indexPath) as? CustomTableViewCell else {
             return UITableViewCell()
         }
+        guard let dataStructure = DataStructure(rawValue: indexPath.row) else {  return UITableViewCell() }
         self.navigationItem.title = "Data Structures"
-        
-        
-        let currentDataStruct = dataStructModel.getDataStruct(at: indexPath.row)
-        cell.configure(currentDataStruct)
+        let currentDataStruct = dataStructModel.getDataStructure(dataStructure)
+        cell.configure(with: currentDataStruct)
         
         
         return cell
@@ -43,12 +42,11 @@ class DataStructuresTableViewController: UITableViewController {
         print(indexPath.row)
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let targetController = mainStoryboard.instantiateViewController(withIdentifier: "DataStructId") as? DetailViewController else {
-            return
-        }
-        let currentDataStruct = dataStructModel.getDataStruct(at: indexPath.row)
+        guard let targetController = mainStoryboard.instantiateViewController(withIdentifier: "DataStructId") as? DetailViewController else { return }
+        guard let dataStructure = DataStructure(rawValue: indexPath.row) else { return }
+        let currentDataType = dataStructModel.getDataStructure(dataStructure)
         
-        targetController.tappedCell = currentDataStruct
+        targetController.selectedDataType = currentDataType
         
         self.navigationController?.pushViewController(targetController, animated: true)
     }

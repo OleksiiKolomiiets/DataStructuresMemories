@@ -12,15 +12,15 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var textInsideLable: UILabel!
     
-    var tappedCell: DataStructProtocol?
+    var selectedDataType: DataStructProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let title = tappedCell?.title {
+        if let title = selectedDataType?.title {
             self.navigationItem.title = title
         }
-        textInsideLable?.text = tappedCell?.descr
-        gradientView.opacityGradient()
+        textInsideLable?.text = selectedDataType?.descr
+        gradientView.addOpacityGradient()
     }
     
     @IBOutlet weak var gradientView: UIView!
@@ -31,15 +31,16 @@ class DetailViewController: UIViewController {
             let priorityForShrink = isTextShrinked ? UILayoutPriority(250) : UILayoutPriority(999)
             let priorityForUnShrink = isTextShrinked ? UILayoutPriority(999) : UILayoutPriority(250)
             UIView.transition(
-                with: childView,
+                with: viewWithDataStructDetailes,
                 duration: 0.3,
                 options: [.transitionFlipFromTop],
                 animations: { [ weak self ]  in
-                    self?.toggleButton.setTitleForAllStates(using: title)
-                    self?.wikiButton.isHidden = !(self?.wikiButton.isHidden)!
-                    self?.gradientView.isHidden = !(self?.gradientView.isHidden)!
-                    self?.constraintToHeight.priority = priorityForUnShrink
-                    self?.gradientView.updateConstraints()
+                    guard let strongSelf = self else { return }
+                    strongSelf.toggleButton.setTitleForAllStates(using: title)
+                    strongSelf.wikiButton.isHidden.toggle()
+                    strongSelf.gradientView.isHidden.toggle()
+                    strongSelf.constraintToHeight.priority = priorityForUnShrink
+                    strongSelf.gradientView.updateConstraints()
                 }
             )
             trailingToggleButtonConstraint.priority = priorityForShrink
@@ -52,7 +53,7 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func touchMoreButton(_ sender: UIButton) {
-        isTextShrinked = !isTextShrinked
+        isTextShrinked.toggle()
     }
     
     @IBOutlet weak var trailingToggleButtonConstraint: NSLayoutConstraint!
@@ -67,9 +68,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    @IBOutlet weak var childView: UIView!
-    
-    @IBOutlet var parentView: UIView!
+    @IBOutlet weak var viewWithDataStructDetailes: UIView!
     
     @IBOutlet weak var toggleButton: UIButton!
     
@@ -84,18 +83,18 @@ class DetailViewController: UIViewController {
             preferredStyle: .actionSheet
         )
         
-        let presenter = URLPresenterManager()
+        let presenterManager = URLPresenterManager()
         
-        for index in 0 ..< presenter.amountOfPresenters {
+        for index in 0 ..< presenterManager.amountOfPresenters {
 
             
-            presenter.setPresenter(by: index)
-            let cuurentPresenter = presenter.presenter!
+            presenterManager.setPresenter(at: index)
+            let cuurentPresenter = presenterManager.currentPresenter!
             waysToOpenWikiLink.addAction(UIAlertAction(
-                title: presenter.getTitleOfPresenter(),
-                style: presenter.getStyleOfPresenter(),
+                title: presenterManager.titleOfPresenter,
+                style: presenterManager.styleOfPresenter,
                 handler:  { action in
-                    presenter.getAtcion(by: self, with: cuurentPresenter)()
+                    presenterManager.getAction(by: self, with: cuurentPresenter)()
             }
             ))
         }
@@ -104,14 +103,14 @@ class DetailViewController: UIViewController {
     func pushVisulizationControllerInStack() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let visualVC = storyboard.instantiateViewController(withIdentifier: "IdVisualVC") as? VisualizationViewController else { return }
-        visualVC.titleOfController = tappedCell?.title
+        visualVC.titleOfController = selectedDataType?.title
         self.navigationController?.pushViewController(visualVC, animated: true)
         
     }
 }
 
 extension UIView {
-    func opacityGradient() {
+    func addOpacityGradient() {
         let gradient = CAGradientLayer()
         gradient.frame = self.bounds
         gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
@@ -124,7 +123,13 @@ extension UIButton {
     func setTitleForAllStates(using newTitle: String) {
         self.setTitle(newTitle, for: UIControlState.normal)
         self.setTitle(newTitle, for: UIControlState.selected)
-        self.setTitle(newTitle, for: UIControlState.focused)
+        self.setTitle(newTitle, for: UIControlState.highlighted)
         self.setTitle(newTitle, for: UIControlState.disabled)
+    }
+}
+
+extension Bool {
+    mutating func toggle() {
+        self = !self
     }
 }
