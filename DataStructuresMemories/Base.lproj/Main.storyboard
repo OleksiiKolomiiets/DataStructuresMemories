@@ -110,7 +110,6 @@
                                             <constraint firstItem="jBf-cZ-Bjq" firstAttribute="leading" secondItem="yvn-F3-09M" secondAttribute="leading" id="lna-lX-S07"/>
                                         </constraints>
                                     </view>
-<<<<<<< HEAD
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hE-dF-K8a">
                                         <rect key="frame" x="187" y="388" width="41" height="35"/>
                                         <color key="backgroundColor" red="0.99927128099999996" green="0.76460838779999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -131,16 +130,6 @@
                                         </state>
                                         <connections>
                                             <action selector="tappedVisualisationButton:" destination="e4p-tP-CEx" eventType="touchUpInside" id="Id2-TM-NAD"/>
-=======
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hE-dF-K8a">
-                                        <rect key="frame" x="187" y="388" width="41" height="35"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="19"/>
-                                        <state key="normal" title="Wiki">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="touchWikiButton:" destination="e4p-tP-CEx" eventType="touchUpInside" id="aW3-yk-AhO"/>
->>>>>>> 88455151e2132532f06ac8404aeb153a8b804e57
                                         </connections>
                                     </button>
                                 </subviews>
@@ -148,14 +137,10 @@
                                     <constraint firstItem="toy-7a-f0I" firstAttribute="leading" secondItem="yvn-F3-09M" secondAttribute="leading" priority="250" constant="373" id="3X3-Q5-2xf"/>
                                     <constraint firstItem="9hE-dF-K8a" firstAttribute="width" secondItem="toy-7a-f0I" secondAttribute="width" id="4eM-SA-vYb"/>
                                     <constraint firstItem="9hE-dF-K8a" firstAttribute="height" secondItem="toy-7a-f0I" secondAttribute="height" id="8wG-Mb-8M5"/>
-<<<<<<< HEAD
                                     <constraint firstItem="6QM-hm-BaU" firstAttribute="top" secondItem="9hE-dF-K8a" secondAttribute="bottom" constant="30" id="DP2-fL-5iG"/>
                                     <constraint firstItem="6QM-hm-BaU" firstAttribute="leading" secondItem="19W-aK-gim" secondAttribute="leading" constant="159" id="G3p-yA-Pmn"/>
                                     <constraint firstAttribute="bottom" secondItem="yvn-F3-09M" secondAttribute="bottom" id="esr-gk-wzF"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6QM-hm-BaU" secondAttribute="trailing" id="kuF-sI-Gok"/>
-=======
-                                    <constraint firstAttribute="bottom" secondItem="yvn-F3-09M" secondAttribute="bottom" id="esr-gk-wzF"/>
->>>>>>> 88455151e2132532f06ac8404aeb153a8b804e57
                                     <constraint firstItem="yvn-F3-09M" firstAttribute="leading" secondItem="19W-aK-gim" secondAttribute="leading" id="l7Z-TL-frq"/>
                                     <constraint firstAttribute="trailing" secondItem="yvn-F3-09M" secondAttribute="trailing" id="nev-0r-aCx"/>
                                     <constraint firstItem="9hE-dF-K8a" firstAttribute="top" secondItem="toy-7a-f0I" secondAttribute="bottom" constant="20" id="oWN-wY-t5V"/>
@@ -192,10 +177,6 @@
                         <outlet property="trailingToggleButtonConstraint" destination="P7O-GX-UiP" id="OQq-A9-WGd"/>
                         <outlet property="view" destination="hXs-Q6-at9" id="pvq-X9-vdt"/>
                         <outlet property="wikiButton" destination="9hE-dF-K8a" id="IQh-x9-XzB"/>
-<<<<<<< HEAD
-                        <segue destination="qy9-D6-HyL" kind="show" id="lTF-Lh-Eib"/>
-=======
->>>>>>> 88455151e2132532f06ac8404aeb153a8b804e57
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ssb-XZ-znO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -218,7 +199,7 @@
                                 <rect key="frame" x="0.0" y="174" width="414" height="562"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="YPH-t4-M7Q" kind="embed" id="r4c-af-LT7"/>
+                                    <segue destination="YPH-t4-M7Q" kind="embed" identifier="" id="r4c-af-LT7"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -375,121 +356,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H6N-ck-wop" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3613" y="-1330"/>
-        </scene>
-        <!--Web View Presenter-->
-        <scene sceneID="4aR-gx-U4O">
-            <objects>
-                <viewController storyboardIdentifier="WKWebView" id="7HR-Jf-R6A" customClass="WKWebViewPresenter" customModule="DataStructuresMemories" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JS1-cK-hAp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gr6-Vm-Ggn">
-                                <rect key="frame" x="0.0" y="46" width="414" height="690"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8R-tw-9Ql">
-                                <rect key="frame" x="10" y="16" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.013198232278227806" green="6.3822866650298238e-05" blue="0.0" alpha="0.11540265992167102" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="tocuhBackButton:" destination="7HR-Jf-R6A" eventType="touchUpInside" id="PQj-xM-YPf"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="gr6-Vm-Ggn" firstAttribute="trailing" secondItem="Al2-L9-qUd" secondAttribute="trailing" id="3mI-hr-25Y"/>
-                            <constraint firstItem="gr6-Vm-Ggn" firstAttribute="leading" secondItem="Al2-L9-qUd" secondAttribute="leading" id="6EC-Zt-1vz"/>
-                            <constraint firstItem="e8R-tw-9Ql" firstAttribute="top" secondItem="JS1-cK-hAp" secondAttribute="top" constant="16" id="Vct-IP-gtC"/>
-                            <constraint firstItem="gr6-Vm-Ggn" firstAttribute="top" secondItem="e8R-tw-9Ql" secondAttribute="bottom" id="aKa-Tj-dUx"/>
-                            <constraint firstItem="gr6-Vm-Ggn" firstAttribute="bottom" secondItem="Al2-L9-qUd" secondAttribute="bottom" id="jhJ-pY-Wjd"/>
-                            <constraint firstItem="e8R-tw-9Ql" firstAttribute="leading" secondItem="Al2-L9-qUd" secondAttribute="leading" constant="10" id="m6W-hq-nhx"/>
-                            <constraint firstItem="Al2-L9-qUd" firstAttribute="trailing" secondItem="e8R-tw-9Ql" secondAttribute="trailing" constant="358" id="zN5-sB-zko"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Al2-L9-qUd"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="3Af-jk-IWc"/>
-                    <connections>
-                        <outlet property="containerView" destination="gr6-Vm-Ggn" id="oaI-TW-0Rz"/>
-                        <outlet property="view" destination="JS1-cK-hAp" id="iNH-w0-q8D"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="O4Z-0Z-NQN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3768.115942028986" y="-1598.6413043478262"/>
-        </scene>
-        <!--Web View Presenter-->
-        <scene sceneID="njy-aY-HPv">
-            <objects>
-                <viewController storyboardIdentifier="UIWebView" id="AVa-iz-qZw" customClass="UIWebViewPresenter" customModule="DataStructuresMemories" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lBU-kE-LFX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bvj-Dz-GTP">
-                                <rect key="frame" x="0.0" y="45" width="414" height="691"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yh9-vl-Wic">
-                                <rect key="frame" x="12" y="16" width="49" height="29"/>
-                                <color key="backgroundColor" red="0.020378805696964264" green="0.011934025213122368" blue="0.015562846325337887" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="backButton:" destination="AVa-iz-qZw" eventType="touchUpInside" id="9nq-TE-4cm"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="xMG-wF-X7D" firstAttribute="bottom" secondItem="bvj-Dz-GTP" secondAttribute="bottom" id="5vS-o4-cIK"/>
-                            <constraint firstItem="xMG-wF-X7D" firstAttribute="trailing" secondItem="Yh9-vl-Wic" secondAttribute="trailing" constant="353" id="9gm-Mb-2od"/>
-                            <constraint firstItem="bvj-Dz-GTP" firstAttribute="top" secondItem="xMG-wF-X7D" secondAttribute="top" constant="25" id="U7b-PO-6ON"/>
-                            <constraint firstItem="xMG-wF-X7D" firstAttribute="trailing" secondItem="bvj-Dz-GTP" secondAttribute="trailing" id="b4h-9G-MhD"/>
-                            <constraint firstItem="Yh9-vl-Wic" firstAttribute="leading" secondItem="xMG-wF-X7D" secondAttribute="leading" constant="12" id="ct6-ZL-q44"/>
-                            <constraint firstItem="bvj-Dz-GTP" firstAttribute="leading" secondItem="xMG-wF-X7D" secondAttribute="leading" id="jt8-kJ-Ux9"/>
-                            <constraint firstItem="Yh9-vl-Wic" firstAttribute="top" secondItem="lBU-kE-LFX" secondAttribute="top" constant="16" id="qmD-zY-XWc"/>
-                            <constraint firstItem="bvj-Dz-GTP" firstAttribute="top" secondItem="Yh9-vl-Wic" secondAttribute="bottom" id="ypB-q8-Mhh"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="xMG-wF-X7D"/>
-                    </view>
-                    <connections>
-                        <outlet property="webView" destination="bvj-Dz-GTP" id="7Ym-kK-FXB"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y3S-uK-D6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3462" y="-715"/>
-        </scene>
-        <!--Safary Presenter-->
-        <scene sceneID="A5B-8J-vRo">
-            <objects>
-                <viewController storyboardIdentifier="SFSafary" id="DVe-uh-GqL" customClass="SFSafaryPresenter" customModule="DataStructuresMemories" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dgR-iw-zHA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXI-IP-k5U">
-                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Ao9-VH-0Xg" firstAttribute="bottom" secondItem="hXI-IP-k5U" secondAttribute="bottom" id="82i-UX-YMl"/>
-                            <constraint firstAttribute="trailing" secondItem="hXI-IP-k5U" secondAttribute="trailing" id="CzC-h8-V4T"/>
-                            <constraint firstItem="hXI-IP-k5U" firstAttribute="top" secondItem="Ao9-VH-0Xg" secondAttribute="top" id="fZx-eA-3xW"/>
-                            <constraint firstItem="hXI-IP-k5U" firstAttribute="leading" secondItem="Ao9-VH-0Xg" secondAttribute="leading" id="yT1-J5-GUl"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Ao9-VH-0Xg"/>
-                    </view>
-                    <connections>
-                        <outlet property="safaryView" destination="hXI-IP-k5U" id="S5k-HA-t1g"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H6N-ck-wop" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3461" y="119"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="25R-yl-kHu">
