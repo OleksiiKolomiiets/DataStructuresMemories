@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 protocol URLPresenterProtocol {
-    func setPresenter(by index: Int)
+    func setPresenter(at index: Int)
     var amountOfPresenters: Int { get }
-    func getTitleOfPresenter() -> String
-    func getStyleOfPresenter() -> UIAlertActionStyle
-    func getAtcion(by controller: DetailViewController, with type: PresentersType) -> () -> Void 
+    var titleOfPresenter: String { get }
+    var styleOfPresenter: UIAlertActionStyle { get }
+    func getAction(by controller: DetailViewController, with type: PresenterType) -> () -> Void 
 }
 
 

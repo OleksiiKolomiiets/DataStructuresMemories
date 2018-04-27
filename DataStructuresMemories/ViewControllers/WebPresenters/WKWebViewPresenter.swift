@@ -20,18 +20,10 @@ class WKWebViewPresenter: UIViewController, WKNavigationDelegate, PresenterProto
     }
     
     var link: String?
-    
-    var url: URL? {
-        if let link = link {
-            return URL(string: link)
-        } else {
-            return nil
-        }
-    }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let url = url {
+        if  let url = self.url  {
             webView.load(URLRequest(url: url))
         }
     }

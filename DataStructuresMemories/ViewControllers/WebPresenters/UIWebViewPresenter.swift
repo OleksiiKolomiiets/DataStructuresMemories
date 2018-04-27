@@ -14,7 +14,7 @@ class UIWebViewPresenter: UIViewController, PresenterProtocol {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let link = link, let url = URL (string: link) {
+        if let url = self.url {
             let request = URLRequest(url: url)
             webView.loadRequest(request)
         }

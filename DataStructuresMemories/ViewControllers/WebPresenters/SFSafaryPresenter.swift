@@ -18,7 +18,7 @@ class SFSafaryPresenter: UIViewController, PresenterProtocol, SFSafariViewContro
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        if let link = link, let url = URL(string: link) {
+        if  let url = self.url  {
             let safariVC = SFSafariViewController(url: url, entersReaderIfAvailable: false)
             safariVC.delegate = self
             

@@ -9,53 +9,24 @@
 import Foundation
 
 class DataSourceModel: DataSource {
-    func getDataStruct(at index: Int) -> DataStructEntity {
-        var dataStruct = DataStructEntity(with: "title", "description", "link")
-        if let title = DataStructuresNames(rawValue: index)?.titleOfDataSturct,
-            let description = DataStructuresNames(rawValue: index)?.description ,
-            let link = DataStructuresNames(rawValue: index)?.link {
-             dataStruct = DataStructEntity(with: title, description, link)
-        }
-        return dataStruct
-    }
     
-    enum DataStructuresNames: Int {
-        case stack = 0, queue, set, dequeue, priorityQueue, listArray, multiSet, dictionary
-        
-        static var countOfNames: Int {
-            var max = 0
-            while let _ = DataStructuresNames(rawValue: max) {
-                max += 1
-            }
-            return max
-        }
-        
-        var titleOfDataSturct: String {
-            return dataStructNames[self.rawValue]
-        }
-        
-        var description: String {
-            return dataStructDescriptionsSource[self.rawValue]
-        }
-        
-        var link: String {
-            return dataStructLinks[self.rawValue]
-        }
+    func getDataStructure(_ dataStructure: DataStructure) -> DataStructEntity {
+       return DataStructEntity(with: dataStructure.titleOfDataSturct, description: dataStructure.description, link: dataStructure.link)
     }
     
     func getNameOfDataStructureMemorise(at index: Int) -> String {
-        guard let currentDataStructurName = DataStructuresNames(rawValue: index) else {
+        guard let currentDataStructurName = DataStructure(rawValue: index) else {
             return "DataStructuresNames with raw value: \(index) has no title."
         }
         return currentDataStructurName.titleOfDataSturct
     }
     
     func getAmountOfRows() -> Int {
-        return DataStructuresNames.countOfNames
+        return DataStructure.countOfNames
     }
     
     func getDescription(of structure: String) -> String {
-        guard let currentDataStruct = DataStructuresNames(rawValue: getCurrentIndex(of: structure))
+        guard let currentDataStruct = DataStructure(rawValue: getCurrentIndex(of: structure))
         else {
             return "Error. No description for this : \(getCurrentIndex(of: structure))."
         }
@@ -64,7 +35,7 @@ class DataSourceModel: DataSource {
     
     func getCurrentIndex(of name: String) -> Int {
         var index = 0
-        while let currentName = DataStructuresNames(rawValue: index) {
+        while let currentName = DataStructure(rawValue: index) {
             if currentName.titleOfDataSturct == name {
                 return index
             }
@@ -73,6 +44,33 @@ class DataSourceModel: DataSource {
         return -1
     }
     
+}
+enum DataStructure: Int {
+    case stack = 0, queue, set, dequeue, priorityQueue, listArray, multiSet, dictionary
+    
+    static var countOfNames: Int {
+        var max = 0
+        while let _ = DataStructure(rawValue: max) {
+            max += 1
+        }
+        return max
+    }
+    
+    var dataStructIndex: Int {
+        return self.rawValue
+    }
+    
+    var titleOfDataSturct: String {
+        return dataStructNames[self.rawValue]
+    }
+    
+    var description: String {
+        return dataStructDescriptionsSource[self.rawValue]
+    }
+    
+    var link: String {
+        return dataStructLinks[self.rawValue]
+    }
 }
 
 let dataStructNames = [ "Stack", "Queue", "Set", "Dequeue", "PriorityQueue", "List(Array)", "MultiSet", "Dictionary" ]

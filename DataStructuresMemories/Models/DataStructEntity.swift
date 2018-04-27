@@ -9,28 +9,17 @@
 import Foundation
 
 struct DataStructEntity: DataStructProtocol {
-    var title: String {
-        return titleOfDataStruct
-    }
+    var title: String
     
-    var descr: String {
-        return descriptionOfDataStruct
-    }
+    var descr: String
     
-    var link: String {
-        return linkOfDataStruct
-    }
+    var link: String
     
-    init(with title: String, _ description: String, _ link: String) {
-        titleOfDataStruct = title
-        descriptionOfDataStruct = description
-        linkOfDataStruct = link
-    }
-    
-    private var titleOfDataStruct: String
-    private var descriptionOfDataStruct: String
-    private var linkOfDataStruct: String
-    
+    init(with title: String, description: String, link: String) {
+        self.title = title
+        self.descr = description
+        self.link = link
+    }    
 }
 
 
