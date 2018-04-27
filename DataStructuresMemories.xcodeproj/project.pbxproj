@@ -15,6 +15,8 @@
 		F20E4D20208A3D42008484BB /* URLPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20E4D1F208A3D42008484BB /* URLPresenterProtocol.swift */; };
 		F21B0E842085EB5F00682532 /* DataStructProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21B0E832085EB5F00682532 /* DataStructProtocol.swift */; };
 		F232A8682087382100EAB19F /* Descriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F232A8672087382100EAB19F /* Descriptions.swift */; };
+		F2521C7B2093C8F0002ABEE7 /* ControlsAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2521C7A2093C8F0002ABEE7 /* ControlsAdapterProtocol.swift */; };
+		F2521C7D2093C9A6002ABEE7 /* MenuViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2521C7C2093C9A6002ABEE7 /* MenuViewProtocol.swift */; };
 		F2657BEF20933D0E0075E9FA /* AdapterViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2657BEE20933D0E0075E9FA /* AdapterViewMenu.swift */; };
 		F285ACDC208DCE8C005CEDBD /* DataStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285ACDB208DCE8C005CEDBD /* DataStructViewController.swift */; };
 		F29CD86520808FF60099DADB /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD86420808FF60099DADB /* CustomTableViewCell.swift */; };
@@ -42,6 +44,8 @@
 		F20E4D1F208A3D42008484BB /* URLPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPresenterProtocol.swift; sourceTree = "<group>"; };
 		F21B0E832085EB5F00682532 /* DataStructProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructProtocol.swift; sourceTree = "<group>"; };
 		F232A8672087382100EAB19F /* Descriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptions.swift; sourceTree = "<group>"; };
+		F2521C7A2093C8F0002ABEE7 /* ControlsAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsAdapterProtocol.swift; sourceTree = "<group>"; };
+		F2521C7C2093C9A6002ABEE7 /* MenuViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewProtocol.swift; sourceTree = "<group>"; };
 		F2657BEE20933D0E0075E9FA /* AdapterViewMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterViewMenu.swift; sourceTree = "<group>"; };
 		F285ACDB208DCE8C005CEDBD /* DataStructViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructViewController.swift; sourceTree = "<group>"; };
 		F29CD86420808FF60099DADB /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 				F20E4D1F208A3D42008484BB /* URLPresenterProtocol.swift */,
 				F20A734D208E16550050B500 /* PresenterProtocol.swift */,
 				F2E3A35B20920BE000FF61D1 /* ATDControlProtocol.swift */,
+				F2521C7A2093C8F0002ABEE7 /* ControlsAdapterProtocol.swift */,
+				F2521C7C2093C9A6002ABEE7 /* MenuViewProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -254,12 +260,14 @@
 				F2E3A35C20920BE000FF61D1 /* ATDControlProtocol.swift in Sources */,
 				F20E4D20208A3D42008484BB /* URLPresenterProtocol.swift in Sources */,
 				F2A5F9C6208B789400732643 /* UIWebViewPresenter.swift in Sources */,
+				F2521C7D2093C9A6002ABEE7 /* MenuViewProtocol.swift in Sources */,
 				F2CA9E4D2080B1AC002E4654 /* DataSourceModel.swift in Sources */,
 				F2C6F144207F7AEF00581510 /* DataStructuresTableViewController.swift in Sources */,
 				F232A8682087382100EAB19F /* Descriptions.swift in Sources */,
 				F2E3A35F209214AC00FF61D1 /* ControllManager.swift in Sources */,
 				F20DB621208499E300AE6F2F /* ConfigurableCell.swift in Sources */,
 				F2E3A35A2091B78900FF61D1 /* FakeDataTableViewController.swift in Sources */,
+				F2521C7B2093C8F0002ABEE7 /* ControlsAdapterProtocol.swift in Sources */,
 				F21B0E842085EB5F00682532 /* DataStructProtocol.swift in Sources */,
 				F2A5F9C8208BA79C00732643 /* WKWebViewPresenter.swift in Sources */,
 				F29CD86520808FF60099DADB /* CustomTableViewCell.swift in Sources */,
