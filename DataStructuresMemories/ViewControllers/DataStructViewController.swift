@@ -16,7 +16,9 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = tappedCell?.title
+        if let title = tappedCell?.title {
+            self.navigationItem.title = title
+        }
         textInsideLable?.text = tappedCell?.descr
         gradientView.opacityGradient()
     }
@@ -33,7 +35,7 @@ class DetailViewController: UIViewController {
                 duration: 0.3,
                 options: [.transitionFlipFromTop],
                 animations: { [ weak self ]  in
-                    self?.toggleButton.changeTitle(to: title)
+                    self?.toggleButton.setTitleForAllStates(using: title)
                     self?.wikiButton.isHidden = !(self?.wikiButton.isHidden)!
                     self?.gradientView.isHidden = !(self?.gradientView.isHidden)!
                     self?.constraintToHeight.priority = priorityForUnShrink
@@ -46,7 +48,7 @@ class DetailViewController: UIViewController {
         }
     }
     @IBAction func touchWikiButton(_ sender: UIButton) {
-        presentWaysToOpenLink() 
+        presentWaysToOpenLink()
     }
     
     @IBAction func touchMoreButton(_ sender: UIButton) {
@@ -59,6 +61,9 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var centreXToggleButtonConstraint: NSLayoutConstraint!
     
+    @IBAction func tappedVisualisationButton(_ sender: UIButton) {
+        pushVisulizationControllerInStack()
+    }
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var childView: UIView!
@@ -81,19 +86,24 @@ class DetailViewController: UIViewController {
         let presenter = URLPresenterManager()
         
         for index in 0 ..< presenter.amountOfPresenters {
-            
             presenter.setPresenter(by: index)
             let cuurentPresenter = presenter.presenter!
+            
             waysToOpenWikiLink.addAction(UIAlertAction(
                 title: presenter.getTitleOfPresenter(),
                 style: presenter.getStyleOfPresenter(),
-                handler:  { action in
-                    presenter.getAtcion(by: self, with: cuurentPresenter)()
-                    
-            }
+                handler:  { action in presenter.getAtcion(by: self, with: cuurentPresenter)() }
             ))
         }
         present(waysToOpenWikiLink, animated: true, completion: nil)
+    }
+    
+    func pushVisulizationControllerInStack() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let visualVC = storyboard.instantiateViewController(withIdentifier: "IdVisualVC") as? VisualizationViewController else { return }
+        visualVC.titleOfController = tappedCell?.title
+        self.navigationController?.pushViewController(visualVC, animated: true)
+        
     }
 }
 
@@ -108,7 +118,7 @@ extension UIView {
 }
 
 extension UIButton {
-    func changeTitle(to newTitle: String) {
+    func setTitleForAllStates(using newTitle: String) {
         self.setTitle(newTitle, for: UIControlState.normal)
         self.setTitle(newTitle, for: UIControlState.selected)
         self.setTitle(newTitle, for: UIControlState.focused)
