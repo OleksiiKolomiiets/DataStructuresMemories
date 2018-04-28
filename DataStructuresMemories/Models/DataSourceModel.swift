@@ -73,7 +73,7 @@ enum DataStructure: Int {
     }
 }
 
-let dataStructNames = [ "Stack", "Queue", "Set", "Dequeue", "PriorityQueue", "List(Array)", "MultiSet", "Dictionary" ]
+let dataStructNames = [ "Stack", "Queue", "Set", "Dequeue", "PriorityQueue", "ListArray", "MultiSet", "Dictionary" ]
 
 let dataStructLinks = [
     "https://en.wikipedia.org/wiki/Stack_(abstract_data_type)",

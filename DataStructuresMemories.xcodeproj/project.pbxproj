@@ -14,6 +14,7 @@
 		F20E4D1E208A3D13008484BB /* URLPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20E4D1D208A3D13008484BB /* URLPresenter.swift */; };
 		F20E4D20208A3D42008484BB /* URLPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20E4D1F208A3D42008484BB /* URLPresenterProtocol.swift */; };
 		F21B0E842085EB5F00682532 /* DataStructProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21B0E832085EB5F00682532 /* DataStructProtocol.swift */; };
+		F21CE01A20949E4300EEB7E7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21CE01920949E4300EEB7E7 /* MenuView.swift */; };
 		F232A8682087382100EAB19F /* Descriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F232A8672087382100EAB19F /* Descriptions.swift */; };
 		F2521C7B2093C8F0002ABEE7 /* ControlsAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2521C7A2093C8F0002ABEE7 /* ControlsAdapterProtocol.swift */; };
 		F2521C7D2093C9A6002ABEE7 /* MenuViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2521C7C2093C9A6002ABEE7 /* MenuViewProtocol.swift */; };
@@ -32,7 +33,7 @@
 		F2E3A3582091B75C00FF61D1 /* VisualizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E3A3572091B75C00FF61D1 /* VisualizationViewController.swift */; };
 		F2E3A35A2091B78900FF61D1 /* FakeDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E3A3592091B78900FF61D1 /* FakeDataTableViewController.swift */; };
 		F2E3A35C20920BE000FF61D1 /* ATDControlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E3A35B20920BE000FF61D1 /* ATDControlProtocol.swift */; };
-		F2E3A35F209214AC00FF61D1 /* ControllManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E3A35E209214AC00FF61D1 /* ControllManager.swift */; };
+		F2E3A35F209214AC00FF61D1 /* ATDControlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E3A35E209214AC00FF61D1 /* ATDControlManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		F20E4D1D208A3D13008484BB /* URLPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPresenter.swift; sourceTree = "<group>"; };
 		F20E4D1F208A3D42008484BB /* URLPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPresenterProtocol.swift; sourceTree = "<group>"; };
 		F21B0E832085EB5F00682532 /* DataStructProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructProtocol.swift; sourceTree = "<group>"; };
+		F21CE01920949E4300EEB7E7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		F232A8672087382100EAB19F /* Descriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptions.swift; sourceTree = "<group>"; };
 		F2521C7A2093C8F0002ABEE7 /* ControlsAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsAdapterProtocol.swift; sourceTree = "<group>"; };
 		F2521C7C2093C9A6002ABEE7 /* MenuViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewProtocol.swift; sourceTree = "<group>"; };
@@ -63,7 +65,7 @@
 		F2E3A3572091B75C00FF61D1 /* VisualizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizationViewController.swift; sourceTree = "<group>"; };
 		F2E3A3592091B78900FF61D1 /* FakeDataTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDataTableViewController.swift; sourceTree = "<group>"; };
 		F2E3A35B20920BE000FF61D1 /* ATDControlProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATDControlProtocol.swift; sourceTree = "<group>"; };
-		F2E3A35E209214AC00FF61D1 /* ControllManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllManager.swift; sourceTree = "<group>"; };
+		F2E3A35E209214AC00FF61D1 /* ATDControlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATDControlManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		F20DB6222084A17400AE6F2F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F21CE01920949E4300EEB7E7 /* MenuView.swift */,
 				F2657BEE20933D0E0075E9FA /* AdapterViewMenu.swift */,
 				F29CD86420808FF60099DADB /* CustomTableViewCell.swift */,
 				F2C6F143207F7AEF00581510 /* DataStructuresTableViewController.swift */,
@@ -99,6 +102,13 @@
 				F20AF6D1208F3830001D1170 /* WebPresenters */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F21CE0182094622500EEB7E7 /* ATDControlManagers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ATDControlManagers;
 			sourceTree = "<group>";
 		};
 		F232A86D2087473300EAB19F /* Information Source */ = {
@@ -177,8 +187,9 @@
 		F2E3A35D2092146100FF61D1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F21CE0182094622500EEB7E7 /* ATDControlManagers */,
 				F20E4D1D208A3D13008484BB /* URLPresenter.swift */,
-				F2E3A35E209214AC00FF61D1 /* ControllManager.swift */,
+				F2E3A35E209214AC00FF61D1 /* ATDControlManager.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -256,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F20DB6242084A19D00AE6F2F /* DataStructEntity.swift in Sources */,
+				F21CE01A20949E4300EEB7E7 /* MenuView.swift in Sources */,
 				F2CA9E4F2080B25B002E4654 /* DataSource.swift in Sources */,
 				F2E3A35C20920BE000FF61D1 /* ATDControlProtocol.swift in Sources */,
 				F20E4D20208A3D42008484BB /* URLPresenterProtocol.swift in Sources */,
@@ -264,7 +276,7 @@
 				F2CA9E4D2080B1AC002E4654 /* DataSourceModel.swift in Sources */,
 				F2C6F144207F7AEF00581510 /* DataStructuresTableViewController.swift in Sources */,
 				F232A8682087382100EAB19F /* Descriptions.swift in Sources */,
-				F2E3A35F209214AC00FF61D1 /* ControllManager.swift in Sources */,
+				F2E3A35F209214AC00FF61D1 /* ATDControlManager.swift in Sources */,
 				F20DB621208499E300AE6F2F /* ConfigurableCell.swift in Sources */,
 				F2E3A35A2091B78900FF61D1 /* FakeDataTableViewController.swift in Sources */,
 				F2521C7B2093C8F0002ABEE7 /* ControlsAdapterProtocol.swift in Sources */,
