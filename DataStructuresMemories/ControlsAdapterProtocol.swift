@@ -10,5 +10,5 @@
 import UIKit
 
 protocol ControlsAdapterProtocol {
-    func place(_ elements: [TypeButton], in view: MenuViewProtocol)
+    func place(_ elements: [ControlType], in view: MenuViewProtocol)
 }

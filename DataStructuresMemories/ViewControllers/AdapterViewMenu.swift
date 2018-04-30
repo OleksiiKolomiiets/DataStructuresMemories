@@ -10,22 +10,25 @@ import UIKit
 
 class AdapterViewMenu: NSObject, ControlsAdapterProtocol {
         
-    func place(_ elements: [TypeButton], in view: MenuViewProtocol) {
-        elements.forEach { view.put(createButtonByType($0)) }
+    func place(_ elements: [ControlType], in view: MenuViewProtocol) {
+        elements.forEach { view.put(createControlItem($0)) }
     }
     
-    private func addControls(_ button: [TypeButton], view: UIStackView) {
-        button.forEach { view.addArrangedSubview(createButtonByType($0)) }
+    private func addControls(_ button: [ControlType], view: UIStackView) {
+        button.forEach { view.addArrangedSubview(createControlItem($0)) }
     }
     
-    private func createButtonByType(_ type: TypeButton ) -> UIButton {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 64))
-        button.backgroundColor = UIColor.green
-        button.setTitle(type.buttonTitle, for: .normal)
-        button.setTitleColor(UIColor.blue, for: .normal)
-        button.addTarget(self, action: #selector( a ), for: .touchUpInside)
-        return button
+    private func createControlItem(_ type: ControlType ) -> UIView {
+        
+        switch type {
+        case .button(let type):
+            return ButtonWithAction(title: type.buttonTitle, action: type.action)
+        case .textFeild(let type):
+            return createTextFeildByType(type)
+        }
     }
-
-    @objc func a() { print(123) }
+    
+    private func createTextFeildByType(_ type: TextFeildType ) -> UITextField {
+        return UITextField()
+    }
 }

@@ -18,13 +18,16 @@ class VisualizationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Visual of \(titleOfController)"
-        let structName = titleOfController.lowercased()
-        if let tupeOfData = DataType(rawValue: structName) {
-            let controlManager = ATDControlManager(for: tupeOfData)
-            let menu = controlManager.createMenu()
-            let adapterForControlsElement = AdapterViewMenu()
-            adapterForControlsElement.place(menu, in: containerForControlls)
+        if let title = titleOfController {
+            self.navigationItem.title = "Visual of \(title)"
+            let structName = titleOfController.lowercased()
+            if let tupeOfData = DataType(rawValue: structName) {
+                let abstractDataType = ATDControlManager(for: tupeOfData)
+                let menu = abstractDataType.manager?.createMenu()
+                let adapterForControlsElement = AdapterViewMenu()
+                embededController?.numberOfRows = 4
+                adapterForControlsElement.place(menu!, in: containerForControlls)
+            }
         }
     }
 

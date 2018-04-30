@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ATDControlProtocol {
-    func createMenu() -> [TypeButton]
+    func createMenu() -> [ControlType]
 }
 
 

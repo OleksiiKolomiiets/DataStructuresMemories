@@ -9,6 +9,6 @@
 import UIKit
 
 protocol MenuViewProtocol {
-    func put(_ element: UIButton)
+    func put(_ element: UIView)
 }
 

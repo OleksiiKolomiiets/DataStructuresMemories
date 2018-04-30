@@ -23,6 +23,16 @@
 		F29CD86520808FF60099DADB /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD86420808FF60099DADB /* CustomTableViewCell.swift */; };
 		F2A5F9C6208B789400732643 /* UIWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A5F9C5208B789400732643 /* UIWebViewPresenter.swift */; };
 		F2A5F9C8208BA79C00732643 /* WKWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A5F9C7208BA79C00732643 /* WKWebViewPresenter.swift */; };
+		F2C67EFB2097106900B23F2C /* ButtonWithAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C67EFA2097106900B23F2C /* ButtonWithAction.swift */; };
+		F2C67EFD2097329400B23F2C /* StackControlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C67EFC2097329400B23F2C /* StackControlManager.swift */; };
+		F2C67EFF209732A300B23F2C /* QueueControlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C67EFE209732A300B23F2C /* QueueControlManager.swift */; };
+		F2C67F01209732B300B23F2C /* DequeueControlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C67F00209732B300B23F2C /* DequeueControlManager.swift */; };
+		F2C67F03209732C800B23F2C /* ArrayListControlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C67F02209732C800B23F2C /* ArrayListControlManager.swift */; };
+		F2C67F05209732D400B23F2C /* SetControlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C67F04209732D400B23F2C /* SetControlManager.swift */; };
+		F2C67F072097331900B23F2C /* MultiSetControlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C67F062097331900B23F2C /* MultiSetControlManager.swift */; };
+		F2C67F092097332A00B23F2C /* DictionaryControlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C67F082097332A00B23F2C /* DictionaryControlManager.swift */; };
+		F2C67F0B2097334200B23F2C /* PriorityQueueControlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C67F0A2097334200B23F2C /* PriorityQueueControlManager.swift */; };
+		F2C67F0D20973D8000B23F2C /* FakeDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C67F0C20973D8000B23F2C /* FakeDataProtocol.swift */; };
 		F2C6F130207F704500581510 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6F12F207F704500581510 /* AppDelegate.swift */; };
 		F2C6F135207F704500581510 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C6F133207F704500581510 /* Main.storyboard */; };
 		F2C6F137207F704500581510 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2C6F136207F704500581510 /* Assets.xcassets */; };
@@ -53,6 +63,16 @@
 		F29CD86420808FF60099DADB /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		F2A5F9C5208B789400732643 /* UIWebViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWebViewPresenter.swift; sourceTree = "<group>"; };
 		F2A5F9C7208BA79C00732643 /* WKWebViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewPresenter.swift; sourceTree = "<group>"; };
+		F2C67EFA2097106900B23F2C /* ButtonWithAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithAction.swift; sourceTree = "<group>"; };
+		F2C67EFC2097329400B23F2C /* StackControlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackControlManager.swift; sourceTree = "<group>"; };
+		F2C67EFE209732A300B23F2C /* QueueControlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueControlManager.swift; sourceTree = "<group>"; };
+		F2C67F00209732B300B23F2C /* DequeueControlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DequeueControlManager.swift; sourceTree = "<group>"; };
+		F2C67F02209732C800B23F2C /* ArrayListControlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayListControlManager.swift; sourceTree = "<group>"; };
+		F2C67F04209732D400B23F2C /* SetControlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetControlManager.swift; sourceTree = "<group>"; };
+		F2C67F062097331900B23F2C /* MultiSetControlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSetControlManager.swift; sourceTree = "<group>"; };
+		F2C67F082097332A00B23F2C /* DictionaryControlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryControlManager.swift; sourceTree = "<group>"; };
+		F2C67F0A2097334200B23F2C /* PriorityQueueControlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueueControlManager.swift; sourceTree = "<group>"; };
+		F2C67F0C20973D8000B23F2C /* FakeDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDataProtocol.swift; sourceTree = "<group>"; };
 		F2C6F12C207F704500581510 /* DataStructuresMemories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataStructuresMemories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2C6F12F207F704500581510 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2C6F134207F704500581510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,6 +112,7 @@
 		F20DB6222084A17400AE6F2F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F2C67EFA2097106900B23F2C /* ButtonWithAction.swift */,
 				F21CE01920949E4300EEB7E7 /* MenuView.swift */,
 				F2657BEE20933D0E0075E9FA /* AdapterViewMenu.swift */,
 				F29CD86420808FF60099DADB /* CustomTableViewCell.swift */,
@@ -107,6 +128,14 @@
 		F21CE0182094622500EEB7E7 /* ATDControlManagers */ = {
 			isa = PBXGroup;
 			children = (
+				F2C67EFC2097329400B23F2C /* StackControlManager.swift */,
+				F2C67EFE209732A300B23F2C /* QueueControlManager.swift */,
+				F2C67F00209732B300B23F2C /* DequeueControlManager.swift */,
+				F2C67F02209732C800B23F2C /* ArrayListControlManager.swift */,
+				F2C67F04209732D400B23F2C /* SetControlManager.swift */,
+				F2C67F062097331900B23F2C /* MultiSetControlManager.swift */,
+				F2C67F082097332A00B23F2C /* DictionaryControlManager.swift */,
+				F2C67F0A2097334200B23F2C /* PriorityQueueControlManager.swift */,
 			);
 			path = ATDControlManagers;
 			sourceTree = "<group>";
@@ -180,6 +209,7 @@
 				F2E3A35B20920BE000FF61D1 /* ATDControlProtocol.swift */,
 				F2521C7A2093C8F0002ABEE7 /* ControlsAdapterProtocol.swift */,
 				F2521C7C2093C9A6002ABEE7 /* MenuViewProtocol.swift */,
+				F2C67F0C20973D8000B23F2C /* FakeDataProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -266,16 +296,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2C67F05209732D400B23F2C /* SetControlManager.swift in Sources */,
 				F20DB6242084A19D00AE6F2F /* DataStructEntity.swift in Sources */,
 				F21CE01A20949E4300EEB7E7 /* MenuView.swift in Sources */,
 				F2CA9E4F2080B25B002E4654 /* DataSource.swift in Sources */,
 				F2E3A35C20920BE000FF61D1 /* ATDControlProtocol.swift in Sources */,
+				F2C67EFF209732A300B23F2C /* QueueControlManager.swift in Sources */,
 				F20E4D20208A3D42008484BB /* URLPresenterProtocol.swift in Sources */,
 				F2A5F9C6208B789400732643 /* UIWebViewPresenter.swift in Sources */,
 				F2521C7D2093C9A6002ABEE7 /* MenuViewProtocol.swift in Sources */,
 				F2CA9E4D2080B1AC002E4654 /* DataSourceModel.swift in Sources */,
+				F2C67F0B2097334200B23F2C /* PriorityQueueControlManager.swift in Sources */,
 				F2C6F144207F7AEF00581510 /* DataStructuresTableViewController.swift in Sources */,
+				F2C67F092097332A00B23F2C /* DictionaryControlManager.swift in Sources */,
 				F232A8682087382100EAB19F /* Descriptions.swift in Sources */,
+				F2C67EFB2097106900B23F2C /* ButtonWithAction.swift in Sources */,
+				F2C67F072097331900B23F2C /* MultiSetControlManager.swift in Sources */,
+				F2C67F01209732B300B23F2C /* DequeueControlManager.swift in Sources */,
 				F2E3A35F209214AC00FF61D1 /* ATDControlManager.swift in Sources */,
 				F20DB621208499E300AE6F2F /* ConfigurableCell.swift in Sources */,
 				F2E3A35A2091B78900FF61D1 /* FakeDataTableViewController.swift in Sources */,
@@ -285,8 +322,11 @@
 				F29CD86520808FF60099DADB /* CustomTableViewCell.swift in Sources */,
 				F20E4D1E208A3D13008484BB /* URLPresenter.swift in Sources */,
 				F2657BEF20933D0E0075E9FA /* AdapterViewMenu.swift in Sources */,
+				F2C67EFD2097329400B23F2C /* StackControlManager.swift in Sources */,
 				F20A734E208E16550050B500 /* PresenterProtocol.swift in Sources */,
+				F2C67F0D20973D8000B23F2C /* FakeDataProtocol.swift in Sources */,
 				F2C6F130207F704500581510 /* AppDelegate.swift in Sources */,
+				F2C67F03209732C800B23F2C /* ArrayListControlManager.swift in Sources */,
 				F2E3A3582091B75C00FF61D1 /* VisualizationViewController.swift in Sources */,
 				F20A734C208DE3A20050B500 /* SFSafaryPresenter.swift in Sources */,
 				F285ACDC208DCE8C005CEDBD /* DataStructViewController.swift in Sources */,

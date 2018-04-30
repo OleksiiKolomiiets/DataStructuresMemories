@@ -10,7 +10,7 @@ import UIKit
 
 class MenuView: UIStackView, MenuViewProtocol {
     
-    func put(_ element: UIButton) {
+    func put(_ element: UIView) {
         self.addArrangedSubview(element)
     }
     
