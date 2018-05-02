@@ -68,15 +68,6 @@ enum ButtonType {
             return title
         }
     }
-    
-    var action: () -> () {
-        switch self {
-        case .pop(_):
-            return { print("Action for pop") }
-        case .push(_):
-            return { print("Action for push") }
-        }
-    }
 }
 
 enum DataType: String {
@@ -87,13 +78,13 @@ enum DataType: String {
         case .stack, .queue, .dequeue:
             return [.button(.push("PUSH", {})), .horizontalStackView(.title("VALUE"), .value("VALUE")), .button(.pop("POP", {}))]
         case .listarray:
-            return [.button(.pop("ADD", {})), .button(.push("DELETE", {})), .textFeild(.key("INDEX")), .textFeild(.value("VALUE"))]
+            return [.button(.pop("DELETE", {})), .button(.push("ADD", {})), .textFeild(.key("INDEX")), .textFeild(.value("VALUE"))]
         case .priorityqueue:
             return [.button(.pop("POP", {})), .button(.push("PUSH", {})), .textFeild(.key("PRIORITY")), .textFeild(.value("VALUE"))]
         case .set, .multiset:
             return [.button(.pop("POP", {})), .button(.push("PUSH", {})), .textFeild(.key("KEY")), .textFeild(.value("VALUE"))]
         case .dictionary:
-            return [.button(.pop("ADD", {})), .button(.push("DELETE", {})), .textFeild(.key("KEY")), .textFeild(.value("VALUE"))]
+            return [.button(.pop("DELETE", {})), .button(.push("ADD", {})), .textFeild(.key("KEY")), .textFeild(.value("VALUE"))]
         }
     }
 }
