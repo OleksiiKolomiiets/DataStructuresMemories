@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ATDControlProtocol {
+protocol ATDControlProtocol: class {
     func createMenu() -> [ControlType]
 }
 

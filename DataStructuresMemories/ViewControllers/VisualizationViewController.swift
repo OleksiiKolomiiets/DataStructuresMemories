@@ -14,23 +14,23 @@ class VisualizationViewController: UIViewController {
     var titleOfController: String!
 
     @IBOutlet weak var containerForControlls: MenuView!
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         if let title = titleOfController {
             self.navigationItem.title = "Visual of \(title)"
             let structName = titleOfController.lowercased()
-            if let tupeOfData = DataType(rawValue: structName) {
-                let abstractDataType = ATDControlManager(for: tupeOfData)
-                let menu = abstractDataType.manager?.createMenu()
+            if let tupeOfData = DataType(rawValue: structName),
+                let menu = ATDControlManager(for: tupeOfData).manager?.createMenu() {
                 let adapterForControlsElement = AdapterViewMenu()
-                embededController?.numberOfRows = 4
-                adapterForControlsElement.place(menu!, in: containerForControlls)
+                adapterForControlsElement.fakeDataDelegate = embededController
+                
+                embededController?.typeOfData = tupeOfData
+                adapterForControlsElement.place(menu, in: containerForControlls)
             }
         }
     }
-
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -40,11 +40,12 @@ class VisualizationViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let targetController = segue.destination as? FakeDataTableViewController {
             self.embededController = targetController
-            targetController.numberOfRows = 0
+            
         }
     }
 
 }
+
 
 
 

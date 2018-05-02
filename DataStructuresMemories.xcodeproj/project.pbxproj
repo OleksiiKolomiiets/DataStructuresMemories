@@ -18,6 +18,7 @@
 		F232A8682087382100EAB19F /* Descriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F232A8672087382100EAB19F /* Descriptions.swift */; };
 		F2521C7B2093C8F0002ABEE7 /* ControlsAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2521C7A2093C8F0002ABEE7 /* ControlsAdapterProtocol.swift */; };
 		F2521C7D2093C9A6002ABEE7 /* MenuViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2521C7C2093C9A6002ABEE7 /* MenuViewProtocol.swift */; };
+		F259CBBA2099AAF500EB907C /* StackFakeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F259CBB92099AAF500EB907C /* StackFakeDataModel.swift */; };
 		F2657BEF20933D0E0075E9FA /* AdapterViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2657BEE20933D0E0075E9FA /* AdapterViewMenu.swift */; };
 		F285ACDC208DCE8C005CEDBD /* DataStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285ACDB208DCE8C005CEDBD /* DataStructViewController.swift */; };
 		F29CD86520808FF60099DADB /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29CD86420808FF60099DADB /* CustomTableViewCell.swift */; };
@@ -58,6 +59,7 @@
 		F232A8672087382100EAB19F /* Descriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptions.swift; sourceTree = "<group>"; };
 		F2521C7A2093C8F0002ABEE7 /* ControlsAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsAdapterProtocol.swift; sourceTree = "<group>"; };
 		F2521C7C2093C9A6002ABEE7 /* MenuViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewProtocol.swift; sourceTree = "<group>"; };
+		F259CBB92099AAF500EB907C /* StackFakeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackFakeDataModel.swift; sourceTree = "<group>"; };
 		F2657BEE20933D0E0075E9FA /* AdapterViewMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterViewMenu.swift; sourceTree = "<group>"; };
 		F285ACDB208DCE8C005CEDBD /* DataStructViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructViewController.swift; sourceTree = "<group>"; };
 		F29CD86420808FF60099DADB /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				F2CA9E4C2080B1AC002E4654 /* DataSourceModel.swift */,
 				F20DB6232084A19D00AE6F2F /* DataStructEntity.swift */,
+				F259CBB92099AAF500EB907C /* StackFakeDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				F20E4D1E208A3D13008484BB /* URLPresenter.swift in Sources */,
 				F2657BEF20933D0E0075E9FA /* AdapterViewMenu.swift in Sources */,
 				F2C67EFD2097329400B23F2C /* StackControlManager.swift in Sources */,
+				F259CBBA2099AAF500EB907C /* StackFakeDataModel.swift in Sources */,
 				F20A734E208E16550050B500 /* PresenterProtocol.swift in Sources */,
 				F2C67F0D20973D8000B23F2C /* FakeDataProtocol.swift in Sources */,
 				F2C6F130207F704500581510 /* AppDelegate.swift in Sources */,

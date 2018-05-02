@@ -15,7 +15,7 @@ class ButtonWithAction: UIButton {
         self.action = action
         self.setTitle(title, for: .normal)
         self.addTarget(self, action: #selector( actionCall ), for: .touchUpInside)
-        self.backgroundColor = UIColor.red
+        self.backgroundColor = UIColor.blue
     }
     
     
@@ -29,3 +29,5 @@ class ButtonWithAction: UIButton {
         action?()
     }
 }
+
+

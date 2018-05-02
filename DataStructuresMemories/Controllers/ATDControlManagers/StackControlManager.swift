@@ -9,6 +9,8 @@
 import Foundation
 
 class StackControlManager: ATDControlProtocol {
+    var delegate: FakeDataProtocol?
+    
     func createMenu() -> [ControlType] {
         return setOfControls
     }

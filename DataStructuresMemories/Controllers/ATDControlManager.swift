@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class ATDControlManager {
     
     var manager: ATDControlProtocol?
@@ -37,28 +36,10 @@ class ATDControlManager {
     var typeOfDataStruct: DataType
 }
 
-enum DataType: String {
-    case stack, queue, set, dequeue, priorityqueue, listarray, multiset, dictionary
-    
-    var controlsSet: [ControlType] {
-        switch self {
-        case .stack, .queue, .dequeue:
-            return [.button(.pop("POP", {})), .button(.push("PUSH", {}))]
-        case .listarray:
-            return [.button(.pop("ADD", {})), .button(.push("DELETE", {})), .textFeild(.key("INDEX")), .textFeild(.value("VALUE"))]
-        case .priorityqueue:
-            return [.button(.pop("POP", {})), .button(.push("PUSH", {})), .textFeild(.key("PRIORITY")), .textFeild(.value("VALUE"))]
-        case .set, .multiset:
-            return [.button(.pop("POP", {})), .button(.push("PUSH", {})), .textFeild(.key("KEY")), .textFeild(.value("VALUE"))]
-        case .dictionary:
-            return [.button(.pop("ADD", {})), .button(.push("DELETE", {})), .textFeild(.key("KEY")), .textFeild(.value("VALUE"))]
-        }
-    }
-}
-
 enum ControlType {
     case button(ButtonType)
     case textFeild(TextFeildType)
+    case horizontalStackView(LableType, TextFeildType)
 }
 
 enum TextFeildType {
@@ -71,6 +52,10 @@ enum TextFeildType {
             return placeholder
         }
     }
+}
+
+enum LableType {
+    case title(String)
 }
 
 enum ButtonType {
@@ -90,6 +75,25 @@ enum ButtonType {
             return { print("Action for pop") }
         case .push(_):
             return { print("Action for push") }
+        }
+    }
+}
+
+enum DataType: String {
+    case stack, queue, set, dequeue, priorityqueue, listarray, multiset, dictionary
+    
+    var controlsSet: [ControlType] {
+        switch self {
+        case .stack, .queue, .dequeue:
+            return [.button(.push("PUSH", {})), .horizontalStackView(.title("VALUE"), .value("VALUE")), .button(.pop("POP", {}))]
+        case .listarray:
+            return [.button(.pop("ADD", {})), .button(.push("DELETE", {})), .textFeild(.key("INDEX")), .textFeild(.value("VALUE"))]
+        case .priorityqueue:
+            return [.button(.pop("POP", {})), .button(.push("PUSH", {})), .textFeild(.key("PRIORITY")), .textFeild(.value("VALUE"))]
+        case .set, .multiset:
+            return [.button(.pop("POP", {})), .button(.push("PUSH", {})), .textFeild(.key("KEY")), .textFeild(.value("VALUE"))]
+        case .dictionary:
+            return [.button(.pop("ADD", {})), .button(.push("DELETE", {})), .textFeild(.key("KEY")), .textFeild(.value("VALUE"))]
         }
     }
 }

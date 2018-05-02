@@ -9,7 +9,7 @@
 import Foundation
 
 protocol FakeDataProtocol {
-    func add(by index: Int)
-    func delete(by index: Int)
+    func add()
+    func delete()
     func highlight(by index: Int)
 }
