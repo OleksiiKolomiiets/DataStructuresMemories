@@ -18,4 +18,7 @@ class StackControlManager: ATDControlProtocol {
     private var setOfControls: [ControlType] {
         return DataType.stack.controlsSet
     }
+    
+    
+   
 }

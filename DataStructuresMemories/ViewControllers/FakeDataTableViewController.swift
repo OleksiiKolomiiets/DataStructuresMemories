@@ -8,10 +8,16 @@
 
 import UIKit
 
-class FakeDataTableViewController: UITableViewController, FakeDataProtocol {
+class FakeDataTableViewController: UITableViewController{
+    
     func delete() {
-        if numberOfRows > 0 {
-            numberOfRows -= 1
+        if dataModel.dataHolder.count > 0 {
+            dataModel.delete()
+            let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0))
+            cell?.backgroundColor = UIColor.green
+            UIView.animate(withDuration: 3) {
+                self.tableView.deleteRows(at: [IndexPath(row: 0, section: 0)], with: .right)
+            }
         }
     }
     
@@ -19,8 +25,12 @@ class FakeDataTableViewController: UITableViewController, FakeDataProtocol {
         
     }
     
-    func add() {
+    func add(element: Int) {
+        dataModel.add(element: numberOfRows)
+        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .bottom)
+        
         numberOfRows += 1
+        higlightedIndex = dataModel.dataHolder.count - 1
     }
     
     var numberOfRows = 0 {
@@ -29,6 +39,10 @@ class FakeDataTableViewController: UITableViewController, FakeDataProtocol {
         }
     }
     
+    var higlightedIndex: Int?
+    
+    var dataModel = StackFakeDataModel()
+    
     var typeOfData: DataType?
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -36,31 +50,39 @@ class FakeDataTableViewController: UITableViewController, FakeDataProtocol {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfRows
+        return dataModel.dataHolder.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "idFakeDataCell", for: indexPath)
-        cell.backgroundColor = setColorForCell(at: indexPath)
-        cell.separatorInset.bottom = 2.0
+        guard let textLabel = cell.textLabel else { return cell }
+        
+        cell.textLabel?.text = dataModel.dataHolder[indexPath.row].toString()
+        
+        UIView.animate(withDuration: 0.5) {
+            cell.backgroundColor = (indexPath.row == self.higlightedIndex) ? UIColor.green : UIColor.yellow
+
+        }
+        
+        UIView.animate(withDuration: 2) {
+            cell.backgroundColor = UIColor.yellow
+        }
+        
+        
+        textLabel.textAlignment = .center
+        textLabel.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.tableView.reloadData()
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
-    private func setColorForCell(at index: IndexPath) -> UIColor {
-        guard let typeOfData = typeOfData else { return UIColor.brown }
-        switch typeOfData {
-        case .stack:
-            return index.row == 0 ? UIColor.blue: UIColor.gray
-//        case .queue:
-//            if
-        default:
-            return UIColor.brown
-        }
+}
+
+extension Int {
+    func toString() -> String {
+        return String(self)
     }
- 
 }

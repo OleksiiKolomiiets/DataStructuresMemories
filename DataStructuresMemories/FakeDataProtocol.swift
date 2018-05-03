@@ -9,7 +9,9 @@
 import Foundation
 
 protocol FakeDataProtocol {
-    func add()
+    func add(element: Int)
     func delete()
     func highlight(by index: Int)
+    
+    var dataHolder: [Int] { get }
 }

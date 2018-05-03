@@ -26,7 +26,7 @@ class AdapterViewMenu: NSObject, ControlsAdapterProtocol {
             case .button(.pop(let title, _)):
                 return ButtonWithAction(title: title, action: { fakeDataDelegate.delete() })
             case .button(.push(let title, _)):
-                return ButtonWithAction(title: title, action: { fakeDataDelegate.add() })
+                return ButtonWithAction(title: title, action: { fakeDataDelegate.add(element: 0) })
             case .textFeild(let type):
                 return createTextFeildByType(type)
             case .horizontalStackView(.title(let title), TextFeildType.value(let placeholder)):

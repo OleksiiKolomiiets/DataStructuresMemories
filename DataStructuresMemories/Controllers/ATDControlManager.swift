@@ -76,9 +76,9 @@ enum DataType: String {
     var controlsSet: [ControlType] {
         switch self {
         case .stack, .queue, .dequeue:
-            return [.button(.push("PUSH", {})), .horizontalStackView(.title("VALUE"), .value("VALUE")), .button(.pop("POP", {}))]
+            return [.button(.push("PUSH", {})), .button(.pop("POP", {}))]
         case .listarray:
-            return [.button(.pop("DELETE", {})), .button(.push("ADD", {})), .textFeild(.key("INDEX")), .textFeild(.value("VALUE"))]
+            return [.button(.pop("DELETE", {})), .button(.push("ADD", {})), .horizontalStackView(.title("VALUE"), .value("VALUE"))]
         case .priorityqueue:
             return [.button(.pop("POP", {})), .button(.push("PUSH", {})), .textFeild(.key("PRIORITY")), .textFeild(.value("VALUE"))]
         case .set, .multiset:
