@@ -9,31 +9,33 @@
 import Foundation
 
 class DataModelFactory: DataModelFactoryProtocol {
-    required init(for dataType: DataType) {
-        currentDataType = dataType
-        switch dataType {
+ 
+    
+    var model: FakeDataProtocol
+    
+    init(for type: DataType) {
+        switch type {
         case .stack:
-            break
-//        case .queue:
-//            <#code#>
-//        case .set:
-//            <#code#>
-//        case .dequeue:
-//            <#code#>
-//        case .priorityqueue:
-//            <#code#>
-//        case .listarray:
-//            <#code#>
-//        case .multiset:
-//            <#code#>
-//        case .dictionary:
-//            <#code#>
+            self.model = StackFakeDataModel()
         default:
-            break
+            self.model = QueueFakeDataModel()
+            
+//        case .queue:
+//            self.model = QueueControlModel()
+//        case .set:
+//            self.model = SetControlManager()
+//        case .dequeue:
+//            self.model = DequeueControlManager()
+//        case .priorityqueue:
+//            self.model = PriorityQueueControlManager()
+//        case .listarray:
+//            self.model = ArrayListControlManager()
+//        case .multiset:
+//            self.model = MultiSetControlManager()
+//        case .dictionary:
+//            self.model = DictionaryControlManager()
         }
     }
-    
-    private var currentDataType: DataType 
     
     
 }

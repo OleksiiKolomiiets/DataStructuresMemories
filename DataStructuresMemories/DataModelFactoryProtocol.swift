@@ -9,5 +9,5 @@
 import Foundation
 
 protocol DataModelFactoryProtocol {
-    init(for dataType: DataType) 
+    var model: FakeDataProtocol { get }
 }

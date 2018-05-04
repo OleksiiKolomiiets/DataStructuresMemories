@@ -8,16 +8,16 @@
 
 import Foundation
 
-class StackFakeDataModel: FakeDataProtocol {
-    
-    
-    func add(element: Int) {
-        dataHolder.append(element)
+struct StackFakeDataModel: FakeDataProtocol {
+        
+    mutating func add(element: Int) {
+        self.dataHolder.append(element)
     }
     
-    func delete() {
+    mutating func delete() {
         if dataHolder.count > 0 {
             dataHolder.remove(at: 0)
+            highlightIndex = 0
         }
     }
     
@@ -26,11 +26,27 @@ class StackFakeDataModel: FakeDataProtocol {
     }
     
     var getLastItem: Int {
-        
-        
         return dataHolder.last!
     }
     
-    var dataHolder = [Int]() 
+    var count: Int {
+        return dataHolder.count
+    }
+    
+    var dataHolder = [Int]()
+    
+    var highlightIndex: Int = 0
+    
+    var deletedIndex: Int {
+        return 0
+    }
+    
+    var addedIndex: Int {
+        return dataHolder.count
+    }
+    
+    func getDataHolder() -> [Int] {
+        return dataHolder
+    }
     
 }

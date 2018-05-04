@@ -9,11 +9,27 @@
 import Foundation
 
 class QueueControlManager: ATDControlProtocol {
+    
+    var delegate: FakeDataProtocol?
+    
     func createMenu() -> [ControlType] {
         return setOfControls
     }
     
     private var setOfControls: [ControlType] {
         return DataType.queue.controlsSet
+    }
+    
+    var model = QueueFakeDataModel()
+    
+    var setOfControll: [ControlType] {
+        return [
+            .button(
+                .push("PUSH", {
+                    self.model.add(element: 1); self.delegate?.add(element: 1)
+                    
+                })),
+            .button(.pop("POP", {}))
+        ]
     }
 }

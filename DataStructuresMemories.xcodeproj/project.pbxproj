@@ -16,6 +16,7 @@
 		F21B0E842085EB5F00682532 /* DataStructProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21B0E832085EB5F00682532 /* DataStructProtocol.swift */; };
 		F21CE01A20949E4300EEB7E7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21CE01920949E4300EEB7E7 /* MenuView.swift */; };
 		F232A8682087382100EAB19F /* Descriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F232A8672087382100EAB19F /* Descriptions.swift */; };
+		F2488A26209C538D007FFCC4 /* QueueFakeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2488A25209C538D007FFCC4 /* QueueFakeDataModel.swift */; };
 		F24C04EB209AF0C0005BB0E8 /* DataModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24C04EA209AF0C0005BB0E8 /* DataModelFactory.swift */; };
 		F24C04ED209AF0E5005BB0E8 /* DataModelFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24C04EC209AF0E5005BB0E8 /* DataModelFactoryProtocol.swift */; };
 		F24C04EF209AFA58005BB0E8 /* CustomTextFeild.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24C04EE209AFA58005BB0E8 /* CustomTextFeild.swift */; };
@@ -60,6 +61,7 @@
 		F21B0E832085EB5F00682532 /* DataStructProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructProtocol.swift; sourceTree = "<group>"; };
 		F21CE01920949E4300EEB7E7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		F232A8672087382100EAB19F /* Descriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptions.swift; sourceTree = "<group>"; };
+		F2488A25209C538D007FFCC4 /* QueueFakeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueFakeDataModel.swift; sourceTree = "<group>"; };
 		F24C04EA209AF0C0005BB0E8 /* DataModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelFactory.swift; sourceTree = "<group>"; };
 		F24C04EC209AF0E5005BB0E8 /* DataModelFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelFactoryProtocol.swift; sourceTree = "<group>"; };
 		F24C04EE209AFA58005BB0E8 /* CustomTextFeild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFeild.swift; sourceTree = "<group>"; };
@@ -203,8 +205,9 @@
 			children = (
 				F2CA9E4C2080B1AC002E4654 /* DataSourceModel.swift */,
 				F20DB6232084A19D00AE6F2F /* DataStructEntity.swift */,
-				F259CBB92099AAF500EB907C /* StackFakeDataModel.swift */,
 				F24C04EA209AF0C0005BB0E8 /* DataModelFactory.swift */,
+				F259CBB92099AAF500EB907C /* StackFakeDataModel.swift */,
+				F2488A25209C538D007FFCC4 /* QueueFakeDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				F232A8682087382100EAB19F /* Descriptions.swift in Sources */,
 				F2C67EFB2097106900B23F2C /* ButtonWithAction.swift in Sources */,
 				F2C67F072097331900B23F2C /* MultiSetControlManager.swift in Sources */,
+				F2488A26209C538D007FFCC4 /* QueueFakeDataModel.swift in Sources */,
 				F24C04EF209AFA58005BB0E8 /* CustomTextFeild.swift in Sources */,
 				F2C67F01209732B300B23F2C /* DequeueControlManager.swift in Sources */,
 				F2E3A35F209214AC00FF61D1 /* ATDControlManager.swift in Sources */,

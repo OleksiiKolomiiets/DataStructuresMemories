@@ -11,6 +11,8 @@ import UIKit
 class AdapterViewMenu: NSObject, ControlsAdapterProtocol {
     
     weak var fakeDataDelegate: FakeDataTableViewController?
+    var typeOfData: DataType?
+    var fakeDataModel: DataModelFactoryProtocol?
     
     func place(_ elements: [ControlType], in view: MenuViewProtocol) {
         elements.forEach { view.put(createControlItem($0)) }

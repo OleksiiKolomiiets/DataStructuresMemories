@@ -9,9 +9,15 @@
 import Foundation
 
 protocol FakeDataProtocol {
-    func add(element: Int)
-    func delete()
+    mutating func add(element: Int)
+    mutating func delete()
     func highlight(by index: Int)
+    func getDataHolder() -> [Int]
     
-    var dataHolder: [Int] { get }
+    var dataHolder: [Int] { get set }
+    var count: Int { get }
+    var highlightIndex: Int  { get set }
+    var deletedIndex: Int { get }
+    var addedIndex: Int { get }
+        
 }

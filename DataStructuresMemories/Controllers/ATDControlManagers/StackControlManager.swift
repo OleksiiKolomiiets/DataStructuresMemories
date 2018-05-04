@@ -9,16 +9,27 @@
 import Foundation
 
 class StackControlManager: ATDControlProtocol {
+    
     var delegate: FakeDataProtocol?
     
     func createMenu() -> [ControlType] {
-        return setOfControls
+        return setOfControll
     }
     
     private var setOfControls: [ControlType] {
         return DataType.stack.controlsSet
     }
     
-    
+    var model = StackFakeDataModel()
    
+    var setOfControll: [ControlType] {
+        return [
+            .button(
+                .push("PUSH", {
+                self.model.add(element: 1); self.delegate?.add(element: 1)
+                
+            })),
+            .button(.pop("POP", {}))
+        ]
+    }
 }

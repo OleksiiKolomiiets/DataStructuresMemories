@@ -20,12 +20,13 @@ class VisualizationViewController: UIViewController {
         if let title = titleOfController {
             self.navigationItem.title = "Visual of \(title)"
             let structName = titleOfController.lowercased()
-            if let tupeOfData = DataType(rawValue: structName),
-                let menu = ATDControlManager(for: tupeOfData).manager?.createMenu() {
+            if let typeOfData = DataType(rawValue: structName), let menu = ATDControlManager(for: typeOfData).manager?.createMenu() {
                 let adapterForControlsElement = AdapterViewMenu()
                 adapterForControlsElement.fakeDataDelegate = embededController
+                adapterForControlsElement.typeOfData = typeOfData
                 
-                embededController?.typeOfData = tupeOfData
+                embededController?.typeOfData = typeOfData
+                embededController?.dataModel = DataModelFactory(for: typeOfData).model
                 adapterForControlsElement.place(menu, in: containerForControlls)
             }
         }
