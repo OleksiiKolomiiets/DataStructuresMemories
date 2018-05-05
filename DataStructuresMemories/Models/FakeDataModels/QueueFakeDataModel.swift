@@ -19,7 +19,7 @@ struct QueueFakeDataModel: FakeDataProtocol {
     }
         
     mutating func add(element: Int) {
-        dataHolder.append(element)
+        dataHolder.insert(element, at: 0)
     }
     
     mutating func delete() {

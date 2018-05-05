@@ -9,7 +9,7 @@
 import Foundation
 
 struct StackFakeDataModel: FakeDataProtocol {
-        
+   
     mutating func add(element: Int) {
         self.dataHolder.append(element)
     }
