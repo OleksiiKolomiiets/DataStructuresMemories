@@ -15,6 +15,12 @@
 		F20E4D20208A3D42008484BB /* URLPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20E4D1F208A3D42008484BB /* URLPresenterProtocol.swift */; };
 		F21B0E842085EB5F00682532 /* DataStructProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21B0E832085EB5F00682532 /* DataStructProtocol.swift */; };
 		F21CE01A20949E4300EEB7E7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21CE01920949E4300EEB7E7 /* MenuView.swift */; };
+		F22488B9209DE74000DC9DCB /* DequeueFakeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22488B8209DE74000DC9DCB /* DequeueFakeDataModel.swift */; };
+		F22488BB209DE95100DC9DCB /* SetFakeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22488BA209DE95100DC9DCB /* SetFakeDataModel.swift */; };
+		F22488BD209DE9E200DC9DCB /* PriorityFakeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22488BC209DE9E200DC9DCB /* PriorityFakeDataModel.swift */; };
+		F22488BF209DEA4700DC9DCB /* MultiSetFakeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22488BE209DEA4700DC9DCB /* MultiSetFakeDataModel.swift */; };
+		F22488C1209DEA7700DC9DCB /* DictionaryFakeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22488C0209DEA7700DC9DCB /* DictionaryFakeDataModel.swift */; };
+		F22488C3209DEAA600DC9DCB /* ArrayFakeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22488C2209DEAA600DC9DCB /* ArrayFakeDataModel.swift */; };
 		F232A8682087382100EAB19F /* Descriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F232A8672087382100EAB19F /* Descriptions.swift */; };
 		F2488A26209C538D007FFCC4 /* QueueFakeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2488A25209C538D007FFCC4 /* QueueFakeDataModel.swift */; };
 		F24C04EB209AF0C0005BB0E8 /* DataModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24C04EA209AF0C0005BB0E8 /* DataModelFactory.swift */; };
@@ -60,6 +66,12 @@
 		F20E4D1F208A3D42008484BB /* URLPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPresenterProtocol.swift; sourceTree = "<group>"; };
 		F21B0E832085EB5F00682532 /* DataStructProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructProtocol.swift; sourceTree = "<group>"; };
 		F21CE01920949E4300EEB7E7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		F22488B8209DE74000DC9DCB /* DequeueFakeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DequeueFakeDataModel.swift; sourceTree = "<group>"; };
+		F22488BA209DE95100DC9DCB /* SetFakeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFakeDataModel.swift; sourceTree = "<group>"; };
+		F22488BC209DE9E200DC9DCB /* PriorityFakeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityFakeDataModel.swift; sourceTree = "<group>"; };
+		F22488BE209DEA4700DC9DCB /* MultiSetFakeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSetFakeDataModel.swift; sourceTree = "<group>"; };
+		F22488C0209DEA7700DC9DCB /* DictionaryFakeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryFakeDataModel.swift; sourceTree = "<group>"; };
+		F22488C2209DEAA600DC9DCB /* ArrayFakeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayFakeDataModel.swift; sourceTree = "<group>"; };
 		F232A8672087382100EAB19F /* Descriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptions.swift; sourceTree = "<group>"; };
 		F2488A25209C538D007FFCC4 /* QueueFakeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueFakeDataModel.swift; sourceTree = "<group>"; };
 		F24C04EA209AF0C0005BB0E8 /* DataModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelFactory.swift; sourceTree = "<group>"; };
@@ -151,6 +163,21 @@
 			path = ATDControlManagers;
 			sourceTree = "<group>";
 		};
+		F22488B7209DE6C500DC9DCB /* FakeDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				F259CBB92099AAF500EB907C /* StackFakeDataModel.swift */,
+				F2488A25209C538D007FFCC4 /* QueueFakeDataModel.swift */,
+				F22488B8209DE74000DC9DCB /* DequeueFakeDataModel.swift */,
+				F22488BA209DE95100DC9DCB /* SetFakeDataModel.swift */,
+				F22488BC209DE9E200DC9DCB /* PriorityFakeDataModel.swift */,
+				F22488BE209DEA4700DC9DCB /* MultiSetFakeDataModel.swift */,
+				F22488C0209DEA7700DC9DCB /* DictionaryFakeDataModel.swift */,
+				F22488C2209DEAA600DC9DCB /* ArrayFakeDataModel.swift */,
+			);
+			path = FakeDataModels;
+			sourceTree = "<group>";
+		};
 		F232A86D2087473300EAB19F /* Information Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,8 +233,7 @@
 				F2CA9E4C2080B1AC002E4654 /* DataSourceModel.swift */,
 				F20DB6232084A19D00AE6F2F /* DataStructEntity.swift */,
 				F24C04EA209AF0C0005BB0E8 /* DataModelFactory.swift */,
-				F259CBB92099AAF500EB907C /* StackFakeDataModel.swift */,
-				F2488A25209C538D007FFCC4 /* QueueFakeDataModel.swift */,
+				F22488B7209DE6C500DC9DCB /* FakeDataModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -312,6 +338,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2C67F05209732D400B23F2C /* SetControlManager.swift in Sources */,
+				F22488C3209DEAA600DC9DCB /* ArrayFakeDataModel.swift in Sources */,
+				F22488BB209DE95100DC9DCB /* SetFakeDataModel.swift in Sources */,
 				F20DB6242084A19D00AE6F2F /* DataStructEntity.swift in Sources */,
 				F21CE01A20949E4300EEB7E7 /* MenuView.swift in Sources */,
 				F2CA9E4F2080B25B002E4654 /* DataSource.swift in Sources */,
@@ -326,12 +354,15 @@
 				F2C67F092097332A00B23F2C /* DictionaryControlManager.swift in Sources */,
 				F232A8682087382100EAB19F /* Descriptions.swift in Sources */,
 				F2C67EFB2097106900B23F2C /* ButtonWithAction.swift in Sources */,
+				F22488BF209DEA4700DC9DCB /* MultiSetFakeDataModel.swift in Sources */,
 				F2C67F072097331900B23F2C /* MultiSetControlManager.swift in Sources */,
 				F2488A26209C538D007FFCC4 /* QueueFakeDataModel.swift in Sources */,
 				F24C04EF209AFA58005BB0E8 /* CustomTextFeild.swift in Sources */,
 				F2C67F01209732B300B23F2C /* DequeueControlManager.swift in Sources */,
 				F2E3A35F209214AC00FF61D1 /* ATDControlManager.swift in Sources */,
 				F20DB621208499E300AE6F2F /* ConfigurableCell.swift in Sources */,
+				F22488BD209DE9E200DC9DCB /* PriorityFakeDataModel.swift in Sources */,
+				F22488B9209DE74000DC9DCB /* DequeueFakeDataModel.swift in Sources */,
 				F2E3A35A2091B78900FF61D1 /* FakeDataTableViewController.swift in Sources */,
 				F2521C7B2093C8F0002ABEE7 /* ControlsAdapterProtocol.swift in Sources */,
 				F21B0E842085EB5F00682532 /* DataStructProtocol.swift in Sources */,
@@ -339,6 +370,7 @@
 				F29CD86520808FF60099DADB /* CustomTableViewCell.swift in Sources */,
 				F24C04EB209AF0C0005BB0E8 /* DataModelFactory.swift in Sources */,
 				F24C04ED209AF0E5005BB0E8 /* DataModelFactoryProtocol.swift in Sources */,
+				F22488C1209DEA7700DC9DCB /* DictionaryFakeDataModel.swift in Sources */,
 				F20E4D1E208A3D13008484BB /* URLPresenter.swift in Sources */,
 				F2657BEF20933D0E0075E9FA /* AdapterViewMenu.swift in Sources */,
 				F2C67EFD2097329400B23F2C /* StackControlManager.swift in Sources */,

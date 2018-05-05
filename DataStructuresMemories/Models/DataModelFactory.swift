@@ -17,23 +17,20 @@ class DataModelFactory: DataModelFactoryProtocol {
         switch type {
         case .stack:
             self.model = StackFakeDataModel()
-        default:
+        case .queue:
             self.model = QueueFakeDataModel()
-            
-//        case .queue:
-//            self.model = QueueControlModel()
-//        case .set:
-//            self.model = SetControlManager()
-//        case .dequeue:
-//            self.model = DequeueControlManager()
-//        case .priorityqueue:
-//            self.model = PriorityQueueControlManager()
-//        case .listarray:
-//            self.model = ArrayListControlManager()
-//        case .multiset:
-//            self.model = MultiSetControlManager()
-//        case .dictionary:
-//            self.model = DictionaryControlManager()
+        case .set:
+            self.model = SetFakeDataModel()
+        case .dequeue:
+            self.model = DequeueFakeDataModel()
+        case .priorityqueue:
+            self.model = PriorityFakeDataModel()
+        case .listarray:
+            self.model = ArrayFakeDataModel()
+        case .multiset:
+            self.model = MultiSetFakeDataModel()
+        case .dictionary:
+            self.model = DictionaryFakeDataModel()
         }
     }
     

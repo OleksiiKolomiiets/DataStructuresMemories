@@ -59,8 +59,8 @@ class FakeDataTableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "idFakeDataCell", for: indexPath)
         guard let model = self.dataModel else { return cell }
-        let data = model.getDataHolder()
-        cell.configure(indexPath: indexPath, with: data, highlightIndex: higlightedIndex!)
+        let title = model.dataHolder[indexPath.row].toString()
+        cell.configure(indexPath: indexPath, with: title, highlightIndex: higlightedIndex!)
         return cell
     }
     
@@ -71,9 +71,9 @@ class FakeDataTableViewController: UITableViewController{
 }
 
 extension UITableViewCell {
-    func configure(indexPath: IndexPath, with data: [Int], highlightIndex: Int) {
+    func configure(indexPath: IndexPath, with title: String, highlightIndex: Int) {
         guard let textLabel = self.textLabel else { return }
-        let title = data[indexPath.row].toString()
+        let title = title
         UIView.animate(withDuration: 0.5) {
             self.backgroundColor = (indexPath.row == highlightIndex) ? UIColor.green : UIColor.yellow
         }

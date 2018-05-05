@@ -17,7 +17,6 @@ struct StackFakeDataModel: FakeDataProtocol {
     mutating func delete() {
         if dataHolder.count > 0 {
             dataHolder.remove(at: 0)
-            highlightIndex = 0
         }
     }
     
@@ -28,25 +27,12 @@ struct StackFakeDataModel: FakeDataProtocol {
     var getLastItem: Int {
         return dataHolder.last!
     }
-    
-    var count: Int {
-        return dataHolder.count
-    }
-    
     var dataHolder = [Int]()
-    
-    var highlightIndex: Int = 0
-    
     var deletedIndex: Int {
         return 0
-    }
-    
+    }    
     var addedIndex: Int {
         return dataHolder.count
-    }
-    
-    func getDataHolder() -> [Int] {
-        return dataHolder
     }
     
 }
