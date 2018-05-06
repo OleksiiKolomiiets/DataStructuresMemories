@@ -11,12 +11,11 @@ import UIKit
 class FakeDataTableViewController: UITableViewController{
  
     func delete() {
-        guard let array = dataModel?.dataHolder else { return }
-        if array.count > 0 {            
-            numberOfRows -= 1
-            self.higlightedIndex = self.dataModel?.deletedIndex            
-            self.dataModel?.delete()
+        guard let dataHolder = dataModel?.dataHolder else { return }
+        if dataHolder.count > 0 {
+            self.higlightedIndex = self.dataModel?.deletedIndex
             guard let deletedIndex = self.higlightedIndex else { return }
+            self.dataModel?.delete()
             tableView.deleteRows(at: [IndexPath(row: deletedIndex , section: 0)], with: .middle)
         }
     }
@@ -27,13 +26,10 @@ class FakeDataTableViewController: UITableViewController{
     
     func add(element: Int) {
         self.higlightedIndex = self.dataModel?.addedIndex
-        numberOfRows += 1
-        self.dataModel?.add(element: numberOfRows)
         guard let addeddIndex = self.higlightedIndex else { return }
+        self.dataModel?.add(element: addeddIndex)
         tableView.insertRows(at: [IndexPath(row: addeddIndex, section: 0)], with: .left)
     }
-    
-    var numberOfRows = 0
     
     var higlightedIndex: Int? {
         didSet {
