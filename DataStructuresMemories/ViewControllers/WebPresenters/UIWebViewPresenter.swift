@@ -11,7 +11,7 @@ import UIKit
 class UIWebViewPresenter: UIViewController, PresenterProtocol {
     
     var link: String?
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let url = self.url {
@@ -26,4 +26,11 @@ class UIWebViewPresenter: UIViewController, PresenterProtocol {
     
     @IBOutlet weak var webView: UIWebView!
     
+}
+
+extension PresenterProtocol {
+    var viewController: UIViewController {
+        guard let controller = self as? UIViewController else { return UIViewController() }
+        return controller
+    }
 }

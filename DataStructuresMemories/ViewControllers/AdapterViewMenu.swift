@@ -42,22 +42,20 @@ class AdapterViewMenu: NSObject, ControlsAdapterProtocol {
     }
     
     private func createVerticalStack(with title: String, placeholder: String) -> UIStackView {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         let textFeild = UITextField(frame: CGRect(x: 0, y: 0, width: 20, height: 200))
-        let container = UIStackView(arrangedSubviews: [label, textFeild])
-        
-        container.distribution = .fillProportionally
-        container.axis = .vertical
-        
         textFeild.textAlignment = .center
         textFeild.keyboardAppearance = .dark
         textFeild.keyboardType = .asciiCapable
-    
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         label.text = title
         label.textAlignment = .center
         label.layoutMargins = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
         label.font = UIFont(name: "Helvetica", size: 14.0)
         
+        let container = UIStackView(arrangedSubviews: [label, textFeild])
+        container.distribution = .fillProportionally
+        container.axis = .vertical
         
         return container
     }

@@ -10,7 +10,7 @@ import Foundation
 
 protocol PresenterProtocol {
     var link: String? { get set }
-    var url: URL? { get }
+    var url: URL? { get }    
 }
 
 extension PresenterProtocol {

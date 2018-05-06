@@ -11,7 +11,7 @@ import UIKit
 class VisualizationViewController: UIViewController {
     
     var embededController: FakeDataTableViewController?
-    var titleOfController: String!
+    var titleOfController: String?
 
     @IBOutlet weak var containerForControlls: MenuView!
         
@@ -19,7 +19,7 @@ class VisualizationViewController: UIViewController {
         super.viewDidLoad()
         if let title = titleOfController {
             self.navigationItem.title = "Visual of \(title)"
-            let structName = titleOfController.lowercased()
+            let structName = title.lowercased()
             if let typeOfData = DataType(rawValue: structName), let menu = ATDControlManager(for: typeOfData).manager?.createMenu() {
                 let adapterForControlsElement = AdapterViewMenu()
                 adapterForControlsElement.fakeDataDelegate = embededController
@@ -31,12 +31,6 @@ class VisualizationViewController: UIViewController {
             }
         }
     }
-   
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let targetController = segue.destination as? FakeDataTableViewController {

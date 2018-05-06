@@ -11,23 +11,30 @@ import UIKit
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var textInsideLable: UILabel!
+    @IBOutlet weak var gradientView: UIView!
+    @IBOutlet weak var trailingToggleButtonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var leadingButtonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var centreXToggleButtonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var viewWithDataStructDetailes: UIView!
+    @IBOutlet weak var toggleButton: UIButton!
+    @IBOutlet weak var constraintToHeight: NSLayoutConstraint!
+    @IBOutlet weak var wikiButton: UIButton!
     
-    var selectedDataType: DataStructProtocol?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if let title = selectedDataType?.title {
-            self.navigationItem.title = title
-        }
-        textInsideLable?.text = selectedDataType?.descr
-        gradientView.addOpacityGradient()
+    @IBAction func touchWikiButton(_ sender: UIButton) {
+        presentWaysToOpenLink()
+    }
+    @IBAction func touchMoreButton(_ sender: UIButton) {
+        isTextShrinked.toggle()
+    }
+    @IBAction func tappedVisualisationButton(_ sender: UIButton) {
+        pushVisulizationControllerInStack()
     }
     
-    @IBOutlet weak var gradientView: UIView!
-    
+    var selectedDataType: DataStructProtocol?
     var isTextShrinked = true {
         didSet {
-            let title = isTextShrinked ? "More" : "Less"
+            let shrinkButton:ShrinkButtonType = isTextShrinked ? .more : .less
             let priorityForShrink = isTextShrinked ? UILayoutPriority(250) : UILayoutPriority(999)
             let priorityForUnShrink = isTextShrinked ? UILayoutPriority(999) : UILayoutPriority(250)
             UIView.transition(
@@ -36,7 +43,7 @@ class DetailViewController: UIViewController {
                 options: [.transitionFlipFromTop],
                 animations: { [ weak self ]  in
                     guard let strongSelf = self else { return }
-                    strongSelf.toggleButton.setTitleForAllStates(using: title)
+                    strongSelf.toggleButton.setTitleForAllStates(using: shrinkButton.description)
                     strongSelf.wikiButton.isHidden.toggle()
                     strongSelf.gradientView.isHidden.toggle()
                     strongSelf.constraintToHeight.priority = priorityForUnShrink
@@ -48,33 +55,16 @@ class DetailViewController: UIViewController {
             centreXToggleButtonConstraint.priority = priorityForUnShrink
         }
     }
-    @IBAction func touchWikiButton(_ sender: UIButton) {
-        presentWaysToOpenLink()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if let title = selectedDataType?.title {
+            self.navigationItem.title = title
+        }
+        textInsideLable?.text = selectedDataType?.descr
+        gradientView.addOpacityGradient()
     }
     
-    @IBAction func touchMoreButton(_ sender: UIButton) {
-        isTextShrinked.toggle()
-    }
-    
-    @IBOutlet weak var trailingToggleButtonConstraint: NSLayoutConstraint!
-    
-    @IBOutlet weak var leadingButtonConstraint: NSLayoutConstraint!
-    
-    @IBOutlet weak var centreXToggleButtonConstraint: NSLayoutConstraint!
-
-    @IBAction func tappedVisualisationButton(_ sender: UIButton) {
-        pushVisulizationControllerInStack()
-    }
-    
-    @IBOutlet weak var scrollView: UIScrollView!
-    
-    @IBOutlet weak var viewWithDataStructDetailes: UIView!
-    
-    @IBOutlet weak var toggleButton: UIButton!
-    
-    @IBOutlet weak var constraintToHeight: NSLayoutConstraint!
-
-    @IBOutlet weak var wikiButton: UIButton!
     
     func presentWaysToOpenLink() {
         let waysToOpenWikiLink = UIAlertController(
@@ -86,10 +76,8 @@ class DetailViewController: UIViewController {
         let presenterManager = URLPresenterManager()
         
         for index in 0 ..< presenterManager.amountOfPresenters {
-
-            
             presenterManager.setPresenter(at: index)
-            let cuurentPresenter = presenterManager.currentPresenter!
+            guard let cuurentPresenter = presenterManager.currentPresenter else { break }
             waysToOpenWikiLink.addAction(UIAlertAction(
                 title: presenterManager.titleOfPresenter,
                 style: presenterManager.styleOfPresenter,
@@ -100,12 +88,27 @@ class DetailViewController: UIViewController {
         }
         present(waysToOpenWikiLink, animated: true, completion: nil)
     }
+    
     func pushVisulizationControllerInStack() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let visualVC = storyboard.instantiateViewController(withIdentifier: "IdVisualVC") as? VisualizationViewController else { return }
         visualVC.titleOfController = selectedDataType?.title
         self.navigationController?.pushViewController(visualVC, animated: true)
         
+    }
+}
+
+enum ShrinkButtonType {
+    case more
+    case less
+    
+    var description: String {
+        switch self {
+        case .more:
+            return "More"
+        case .less:
+            return "Less"
+        }
     }
 }
 

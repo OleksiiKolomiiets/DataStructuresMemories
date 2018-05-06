@@ -43,9 +43,9 @@ class URLPresenterManager: URLPresenterProtocol {
             case .Cancel:
                 break
             default:
-                guard var targetController = mainStoryboard.instantiateViewController(withIdentifier: type.rawValue) as? PresenterProtocol else { return }
-                targetController.link = controller.selectedDataType?.link
-                controller.navigationController?.present(targetController as! UIViewController, animated: true)
+                guard var target = mainStoryboard.instantiateViewController(withIdentifier: type.rawValue) as? PresenterProtocol else { return }
+                target.link = controller.selectedDataType?.link
+                controller.navigationController?.present(target.viewController , animated: true)
             }
         }
     }
