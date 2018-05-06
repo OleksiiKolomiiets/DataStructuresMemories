@@ -9,15 +9,13 @@
 import UIKit
 
 class FakeDataTableViewController: UITableViewController{
-    
-    private var dataHolder = [Int]()
-    
+ 
     func delete() {
-        if dataHolder.count > 0 {            
+        guard let array = dataModel?.dataHolder else { return }
+        if array.count > 0 {            
             numberOfRows -= 1
             self.higlightedIndex = self.dataModel?.deletedIndex            
             self.dataModel?.delete()
-            dataHolder.remove(at: 0)
             guard let deletedIndex = self.higlightedIndex else { return }
             tableView.deleteRows(at: [IndexPath(row: deletedIndex , section: 0)], with: .middle)
         }
@@ -31,7 +29,6 @@ class FakeDataTableViewController: UITableViewController{
         self.higlightedIndex = self.dataModel?.addedIndex
         numberOfRows += 1
         self.dataModel?.add(element: numberOfRows)
-        dataHolder.append(numberOfRows)
         guard let addeddIndex = self.higlightedIndex else { return }
         tableView.insertRows(at: [IndexPath(row: addeddIndex, section: 0)], with: .left)
     }
@@ -53,14 +50,15 @@ class FakeDataTableViewController: UITableViewController{
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataHolder.count
+        guard let array = dataModel?.dataHolder else { return 0 }
+        return array.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "idFakeDataCell", for: indexPath)
         guard let model = self.dataModel, let higlightedIndex = self.higlightedIndex else { return cell }
         let title = model.dataHolder[indexPath.row].toString()
-        cell.configure(indexPath: indexPath, with: title, highlightIndex: higlightedIndex)
+        cell.configure(at: indexPath.row, with: title, highlightIndex: higlightedIndex)
         return cell
     }
     
@@ -71,14 +69,10 @@ class FakeDataTableViewController: UITableViewController{
 }
 
 extension UITableViewCell {
-    func configure(indexPath: IndexPath, with title: String, highlightIndex: Int) {
+    func configure(at index: Int, with title: String, highlightIndex: Int) {
         guard let textLabel = self.textLabel else { return }
-        let title = title
-        let index = indexPath.row
         UIView.animate(withDuration: 2) {
             self.backgroundColor = (index == highlightIndex) ? UIColor.green : UIColor.yellow
-//        }
-//        UIView.animate(withDuration: 3) {
             self.backgroundColor = UIColor.yellow
         }
         textLabel.text = title
