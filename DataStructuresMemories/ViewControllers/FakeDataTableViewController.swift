@@ -16,7 +16,7 @@ class FakeDataTableViewController: UITableViewController{
             self.higlightedIndex = self.dataModel?.deletedIndex
             guard let deletedIndex = self.higlightedIndex else { return }
             self.dataModel?.delete()
-            tableView.deleteRows(at: [IndexPath(row: deletedIndex , section: 0)], with: .middle)
+            tableView.deleteRows(at: [IndexPath(row: deletedIndex , section: 0)], with: .automatic)
         }
     }
     
@@ -27,7 +27,7 @@ class FakeDataTableViewController: UITableViewController{
     func add(element: Int) {
         self.higlightedIndex = self.dataModel?.addedIndex
         guard let addeddIndex = self.higlightedIndex else { return }
-        self.dataModel?.add(element: addeddIndex)
+        self.dataModel?.add(element: element)
         tableView.insertRows(at: [IndexPath(row: addeddIndex, section: 0)], with: .left)
     }
     
@@ -38,7 +38,7 @@ class FakeDataTableViewController: UITableViewController{
             }
         }
     }
-    var dataModel: FakeDataProtocol?
+    var dataModel: FakeDataProtocol!
     var typeOfData: DataType?
     
     override func numberOfSections(in tableView: UITableView) -> Int {

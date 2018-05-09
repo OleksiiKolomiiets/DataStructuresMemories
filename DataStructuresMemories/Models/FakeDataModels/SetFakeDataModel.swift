@@ -8,9 +8,9 @@
 
 import Foundation
 
-class SetFakeDataModel: FakeDataProtocol {
-    func add(element: Int) {
-        
+struct SetFakeDataModel: FakeDataProtocol {
+    mutating func add(element: Int) {
+        dataHolder.insert(element, at: 0)
     }
     
     func delete() {

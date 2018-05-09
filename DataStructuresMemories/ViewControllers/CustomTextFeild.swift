@@ -12,7 +12,7 @@ class CustomTextFeild: UITextField, UITextFieldDelegate {
     
     var callAction: ( (String)->() )?
     
-    init(placeholder: String, keyboardType: UIKeyboardType, action: ((String)->())? ) {
+    init(placeholder: String, keyboardType: UIKeyboardType, action: ((String)->())? = nil ) {
         super.init(frame: .zero)
         
         self.callAction = action

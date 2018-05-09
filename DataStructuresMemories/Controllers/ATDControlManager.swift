@@ -52,6 +52,7 @@ enum TextFeildType {
             return placeholder
         }
     }
+    
 }
 
 enum LableType {

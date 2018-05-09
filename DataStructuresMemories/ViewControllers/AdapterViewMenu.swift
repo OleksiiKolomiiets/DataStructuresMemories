@@ -30,7 +30,7 @@ class AdapterViewMenu: NSObject, ControlsAdapterProtocol {
             case .button(.push(let title, _)):
                 return ButtonWithAction(title: title, action: { fakeDataDelegate.add(element: 0) })
             case .textFeild(let type):
-                return createTextFeildByType(type)
+                return createTextFeildByType(type, action: { (s1: String) -> Void in fakeDataDelegate.add(element: 2) } )
             case .horizontalStackView(.title(let title), TextFeildType.value(let placeholder)):
                 return createVerticalStack(with: title, placeholder: placeholder)
             case .horizontalStackView(_, .key(_)):
@@ -60,7 +60,8 @@ class AdapterViewMenu: NSObject, ControlsAdapterProtocol {
         return container
     }
     
-    private func createTextFeildByType(_ type: TextFeildType ) -> UITextField {
-        return UITextField()
+    private func createTextFeildByType(_ type: TextFeildType, action: ((String)->())? ) -> UITextField {
+        return CustomTextFeild(placeholder: type.placeholder, keyboardType: .numberPad, action: action)
+//        return UITextField()
     }
 }
